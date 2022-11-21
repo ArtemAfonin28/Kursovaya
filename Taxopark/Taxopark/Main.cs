@@ -60,5 +60,12 @@ namespace Taxopark
         {
             label1.Text = userName;
         }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            Avtoriz avt = new Avtoriz();
+            avt.Show();
+            Close();
+        }
     }
 }

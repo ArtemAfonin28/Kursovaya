@@ -39,6 +39,7 @@
             this.Button2 = new Guna.UI2.WinForms.Guna2Button();
             this.Button3 = new Guna.UI2.WinForms.Guna2Button();
             this.Button4 = new Guna.UI2.WinForms.Guna2Button();
+            this.button5 = new Guna.UI2.WinForms.Guna2Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -205,7 +206,7 @@
             this.Button4.FillColor = System.Drawing.Color.Yellow;
             this.Button4.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.Button4.ForeColor = System.Drawing.Color.Black;
-            this.Button4.Location = new System.Drawing.Point(136, 658);
+            this.Button4.Location = new System.Drawing.Point(136, 648);
             this.Button4.Margin = new System.Windows.Forms.Padding(4);
             this.Button4.Name = "Button4";
             this.Button4.Size = new System.Drawing.Size(303, 54);
@@ -213,11 +214,32 @@
             this.Button4.Text = "Заказать такси";
             this.Button4.Click += new System.EventHandler(this.Button4_Click);
             // 
+            // button5
+            // 
+            this.button5.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.button5.BorderRadius = 10;
+            this.button5.BorderThickness = 3;
+            this.button5.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.button5.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.button5.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.button5.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.button5.FillColor = System.Drawing.Color.Yellow;
+            this.button5.Font = new System.Drawing.Font("Segoe UI", 10.2F);
+            this.button5.ForeColor = System.Drawing.Color.Black;
+            this.button5.Location = new System.Drawing.Point(13, 752);
+            this.button5.Margin = new System.Windows.Forms.Padding(4);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(118, 49);
+            this.button5.TabIndex = 10;
+            this.button5.Text = "Вернуться";
+            this.button5.Click += new System.EventHandler(this.button5_Click);
+            // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(609, 814);
+            this.Controls.Add(this.button5);
             this.Controls.Add(this.Button4);
             this.Controls.Add(this.Button3);
             this.Controls.Add(this.Button2);
@@ -248,5 +270,6 @@
         private Guna.UI2.WinForms.Guna2Button Button3;
         private Guna.UI2.WinForms.Guna2Button Button4;
         public System.Windows.Forms.Label label1;
+        private Guna.UI2.WinForms.Guna2Button button5;
     }
 }
