@@ -90,6 +90,7 @@ namespace Taxopark
                 case "True":
                     ch3.Value = false;
                     check--;
+                    rowIndex = -1;
                     break;
                 case "False":
                     check++;
@@ -100,7 +101,7 @@ namespace Taxopark
                         ch3.Value = null;
                         check--;
                     }
-                    rowIndex = ch3.RowIndex;
+                    else rowIndex = ch3.RowIndex;
                     break;
             }
         }
