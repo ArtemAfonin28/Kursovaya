@@ -19,41 +19,51 @@ namespace Taxopark
         public Main()
         {
             InitializeComponent();
+            if (haveCall() == true)
+            {
+                MessageBox.Show("Вы уже закали такси");
+            }
         }
         private void Button4_Click(object sender, EventArgs e)
         {
-            DateTime dateTime = new DateTime();
-            dateTime = DateTime.UtcNow;
-
-            if (TextBox1.Text == "" || TextBox2.Text == "")
+            if (haveCall() == true)
             {
-                MessageBox.Show("Заполните все поля");
+                MessageBox.Show("Вы уже закали такси");
             }
             else
             {
-                string phoneCall = phoneUser;
-                string otkuda = TextBox1.Text;
-                string kuda = TextBox2.Text;
-                    
-                DB db = new DB();
-                MySqlCommand command = new MySqlCommand("insert into `call` (`DataTime_Call`,`Telephone_Call`,`Otkuda`,`Kuda`) " +
-                    "values (@dateTime,@phoneCall,@otkuda,@kuda)", db.getConnection());
-                command.Parameters.Add("@dateTime", MySqlDbType.DateTime).Value = dateTime;
-                command.Parameters.Add("@phoneCall", MySqlDbType.VarChar).Value = phoneCall;
-                command.Parameters.Add("@Otkuda", MySqlDbType.VarChar).Value = otkuda;
-                command.Parameters.Add("@Kuda", MySqlDbType.VarChar).Value = kuda;
+                DateTime dateTime = new DateTime();
+                dateTime = DateTime.UtcNow;
 
-                db.openConnection();
-                if (command.ExecuteNonQuery() == 1)
+                if (TextBox1.Text == "" || TextBox2.Text == "")
                 {
-                    MessageBox.Show("Успех");
+                    MessageBox.Show("Заполните все поля");
                 }
-                else MessageBox.Show("Уже есть");
-                    
-                db.closeConnection();
-                
-                 
+                else
+                {
+                    string phoneCall = phoneUser;
+                    string otkuda = TextBox1.Text;
+                    string kuda = TextBox2.Text;
+
+                    DB db = new DB();
+                    MySqlCommand command = new MySqlCommand("insert into `Call` (`DataTime_Call`,`Telephone_Call`,`Otkuda`,`Kuda`) " +
+                        "values (@dateTime,@phoneCall,@otkuda,@kuda)", db.getConnection());
+                    command.Parameters.Add("@dateTime", MySqlDbType.DateTime).Value = dateTime;
+                    command.Parameters.Add("@phoneCall", MySqlDbType.VarChar).Value = phoneCall;
+                    command.Parameters.Add("@Otkuda", MySqlDbType.VarChar).Value = otkuda;
+                    command.Parameters.Add("@Kuda", MySqlDbType.VarChar).Value = kuda;
+
+                    db.openConnection();
+                    if (command.ExecuteNonQuery() == 1)
+                    {
+                        MessageBox.Show("Успех");
+                    }
+                    else MessageBox.Show("Уже есть");
+                    db.closeConnection();
+                }
             }
+
+
         }
 
         private void Main_Load(object sender, EventArgs e)
@@ -61,11 +71,35 @@ namespace Taxopark
             label1.Text = userName;
         }
 
-        private void button5_Click(object sender, EventArgs e)
+        private void guna2ImageButton1_Click(object sender, EventArgs e)
         {
             Avtoriz avt = new Avtoriz();
             avt.Show();
             Close();
         }
+        private bool haveCall()
+        {
+            bool bollean;
+            string phoneCall = phoneUser;
+
+            DB db = new DB();
+            DataTable table = new DataTable();
+            MySqlDataAdapter adapter = new MySqlDataAdapter();
+            MySqlCommand command = new MySqlCommand("SELECT * FROM `Call` WHERE `Telephone_Call`=@uL", db.getConnection());
+            command.Parameters.Add("@uL", MySqlDbType.VarChar).Value = phoneCall;
+            adapter.SelectCommand = command;
+            adapter.Fill(table);
+
+            if (table.Rows.Count > 0)
+            {
+                bollean = true;
+            }
+            else bollean = false;
+            return bollean;
+            
+            
+
+        }
+
     }
 }

@@ -45,7 +45,7 @@ namespace Taxopark
                         return;
 
                     DB db = new DB();
-                    MySqlCommand command = new MySqlCommand("insert into `сlient` (`FIO_Сlient`,`Telephone_Сlient`,`Password_Сlient`) values (@fio,@phone,@password)", db.getConnection());
+                    MySqlCommand command = new MySqlCommand("insert into `Сlient` (`FIO_Сlient`,`Telephone_Сlient`,`Password_Сlient`) values (@fio,@phone,@password)", db.getConnection());
                     command.Parameters.Add("@fio", MySqlDbType.VarChar).Value = fioUser;
                     command.Parameters.Add("@phone", MySqlDbType.VarChar).Value = phoneUser;
                     command.Parameters.Add("@password", MySqlDbType.VarChar).Value = passwordUser;
@@ -73,7 +73,7 @@ namespace Taxopark
             DB db = new DB();
             DataTable table = new DataTable();
             MySqlDataAdapter adapter = new MySqlDataAdapter();
-            MySqlCommand command = new MySqlCommand("SELECT * FROM `сlient` WHERE `Telephone_Сlient`=@phone", db.getConnection());
+            MySqlCommand command = new MySqlCommand("SELECT * FROM `Сlient` WHERE `Telephone_Сlient`=@phone", db.getConnection());
             command.Parameters.Add("@phone", MySqlDbType.VarChar).Value = phoneUser;
 
             adapter.SelectCommand = command;

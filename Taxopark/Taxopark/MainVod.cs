@@ -43,7 +43,7 @@ namespace Taxopark
                     Accepted_DataTime = DateTime.UtcNow;
 
                     DB db = new DB();
-                    MySqlCommand command = new MySqlCommand("UPDATE `call` SET `Accepted` = 1, `Accepted_DataTime`= @Accepted_DataTime WHERE `Telephone_Call` = @Telephone_Call;", db.getConnection());
+                    MySqlCommand command = new MySqlCommand("UPDATE `Call` SET `Accepted` = 1, `Accepted_DataTime`= @Accepted_DataTime WHERE `Telephone_Call` = @Telephone_Call;", db.getConnection());
                     command.Parameters.Add("@Accepted_DataTime", MySqlDbType.DateTime).Value = Accepted_DataTime;
                     command.Parameters.Add("@Telephone_Call", MySqlDbType.VarChar).Value = Telephone_Call;
                     db.openConnection();
@@ -119,7 +119,7 @@ namespace Taxopark
             else
             {
                 DB db = new DB();
-                MySqlCommand command = new MySqlCommand("UPDATE `call` SET `Accepted` = null, `Accepted_DataTime`= null WHERE `Telephone_Call` = @Telephone_Call;", db.getConnection());
+                MySqlCommand command = new MySqlCommand("UPDATE `Call` SET `Accepted` = null, `Accepted_DataTime`= null, `Alerts`=null WHERE `Telephone_Call` = @Telephone_Call;", db.getConnection());
                 command.Parameters.Add("@Telephone_Call", MySqlDbType.VarChar).Value = Telephone_Call;
                 db.openConnection();
                 command.ExecuteNonQuery();
@@ -151,7 +151,7 @@ namespace Taxopark
 
             DB db = new DB();
             db.openConnection();
-            string query = "SELECT DataTime_Call,Telephone_Call,Otkuda,Kuda FROM 19055_taxopark.call where Accepted is null;";
+            string query = "SELECT DataTime_Call,Telephone_Call,Otkuda,Kuda FROM 19055_Taxopark.Call where Accepted is null;";
             MySqlCommand command = new MySqlCommand(query, db.getConnection());
             MySqlDataReader reader = command.ExecuteReader();
             List<string[]> data = new List<string[]>();
@@ -174,6 +174,31 @@ namespace Taxopark
 
             foreach (string[] s in data)
                 dataGridView1.Rows.Add(s);
+        }
+
+        private void guna2ImageButton1_Click(object sender, EventArgs e)
+        {
+            Avtoriz avt = new Avtoriz();
+            avt.Show();
+            Close();
+        }
+
+        private void button2_Click(object sender, EventArgs e)//Оповещение
+        {
+            if (Telephone_Call == "")
+            {
+                MessageBox.Show("У вас нет принятого вызова");
+            }
+            else
+            {
+                DB db = new DB();
+                MySqlCommand command = new MySqlCommand("UPDATE `Call` SET `Alerts` = 1 WHERE `Telephone_Call` = @Telephone_Call;", db.getConnection());
+                command.Parameters.Add("@Telephone_Call", MySqlDbType.VarChar).Value = Telephone_Call;
+                db.openConnection();
+                command.ExecuteNonQuery();
+                MessageBox.Show("Оповещение придет клиенту как только он войдет в приложение");
+                db.openConnection();
+            }
         }
     }
 }
