@@ -227,6 +227,12 @@
       <DependentUpon>AvtorizVod.cs</DependentUpon>
     </Compile>
     <Compile Include="DB.cs" />
+    <Compile Include="InfoYourCall.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InfoYourCall.Designer.cs">
+      <DependentUpon>InfoYourCall.cs</DependentUpon>
+    </Compile>
     <Compile Include="Main.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -258,6 +264,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="AvtorizVod.resx">
       <DependentUpon>AvtorizVod.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InfoYourCall.resx">
+      <DependentUpon>InfoYourCall.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Main.resx">
       <DependentUpon>Main.cs</DependentUpon>
