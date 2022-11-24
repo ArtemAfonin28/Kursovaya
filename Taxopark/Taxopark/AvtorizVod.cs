@@ -33,7 +33,7 @@ namespace Taxopark
             DB db = new DB();
             DataTable table = new DataTable();
             MySqlDataAdapter adapter = new MySqlDataAdapter();
-            MySqlCommand command = new MySqlCommand("SELECT * FROM `drivers` WHERE `Telephone_Drivers`=@uL AND `Password_Drivers`=@uP", db.getConnection());
+            MySqlCommand command = new MySqlCommand("SELECT * FROM `Drivers` WHERE `Telephone_Drivers`=@uL AND `Password_Drivers`=@uP", db.getConnection());
             command.Parameters.Add("@uL", MySqlDbType.VarChar).Value = phoneDriver;
             command.Parameters.Add("@uP", MySqlDbType.VarChar).Value = passwordDriver;
 
@@ -42,9 +42,9 @@ namespace Taxopark
 
             if (table.Rows.Count > 0)                      
             {
-                Main main = new Main();
-                main.Show();
-                Hide();
+                MainVod mainVod = new MainVod();
+                mainVod.Show();
+                Close();
             }
             else
                 MessageBox.Show("Такого пользователя не существует");

@@ -616,7 +616,6 @@ C:\Users\19055\Desktop\Kursovaya\Taxopark\Taxopark\obj\Debug\Taxopark.csproj.Cor
 C:\Users\19055\Desktop\Kursovaya\Taxopark\Taxopark\obj\Debug\Taxopark.csproj.CopyComplete
 C:\Users\19055\Desktop\Kursovaya\Taxopark\Taxopark\obj\Debug\Taxopark.exe
 C:\Users\19055\Desktop\Kursovaya\Taxopark\Taxopark\obj\Debug\Taxopark.pdb
-C:\Users\19055\Desktop\Kursovaya-main\Taxopark\Taxopark\obj\Debug\Taxopark.csprojAssemblyReference.cache
 C:\Users\Savan\Desktop\Kursovaya\Taxopark\Taxopark\bin\Debug\Taxopark.exe.config
 C:\Users\Savan\Desktop\Kursovaya\Taxopark\Taxopark\bin\Debug\Taxopark.exe
 C:\Users\Savan\Desktop\Kursovaya\Taxopark\Taxopark\bin\Debug\Taxopark.pdb
@@ -721,3 +720,6 @@ C:\Users\Savan\Desktop\Kursovaya\Taxopark\Taxopark\obj\Debug\Taxopark.csproj.Cop
 C:\Users\Savan\Desktop\Kursovaya\Taxopark\Taxopark\obj\Debug\Taxopark.exe
 C:\Users\Savan\Desktop\Kursovaya\Taxopark\Taxopark\obj\Debug\Taxopark.pdb
 C:\Users\Savan\Desktop\Kursovaya\Taxopark\Taxopark\obj\Debug\Taxopark.InfoYourCall.resources
+C:\Users\19055\Desktop\Kursovaya-main\Taxopark\Taxopark\obj\Debug\Taxopark.csproj.AssemblyReference.cache
+C:\Users\19055\Desktop\Kursovaya-main\Taxopark\Taxopark\obj\Debug\Taxopark.csproj.SuggestedBindingRedirects.cache
+C:\Users\19055\Desktop\Kursovaya-main\Taxopark\Taxopark\obj\Debug\Taxopark.InfoYourCall.resources

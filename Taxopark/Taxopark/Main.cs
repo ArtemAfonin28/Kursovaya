@@ -1,5 +1,4 @@
 ﻿using MySql.Data.MySqlClient;
-using MySqlX.XDevAPI.Relational;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -18,7 +17,6 @@ namespace Taxopark
     {
         public string userName;
         public string phoneUser;
-        string alertsCall; //приехал ли водитель
         string deliverFrom;//От
         string deliverTo;//До
         public Main()
@@ -30,6 +28,7 @@ namespace Taxopark
             if (haveCall() == true)
             {
                 MessageBox.Show("Вы уже закали такси");
+                openInfoYourCall();
             }
             else
             {
@@ -58,6 +57,7 @@ namespace Taxopark
                     if (command.ExecuteNonQuery() == 1)
                     {
                         MessageBox.Show("Вы успешно заказали такси");
+                        openInfoYourCall();
                     }
                     else MessageBox.Show("Уже есть");
                     db.closeConnection();
@@ -73,6 +73,7 @@ namespace Taxopark
             if (haveCall() == true)
             {
                 MessageBox.Show("Вы уже закали такси");
+                openInfoYourCall();
             }
         }
 
@@ -96,9 +97,7 @@ namespace Taxopark
             adapter.Fill(table);
             if (table.Rows.Count > 0)
             {
-                alertsCall = table.Rows[0][7].ToString();
                 bollean = true;
-                timer1.Enabled = true;
 
                 //Даныне откуда и куда
                 deliverFrom = table.Rows[0][3].ToString();
@@ -107,7 +106,6 @@ namespace Taxopark
             }
             else
             {
-                alertsCall = "";
                 bollean = false;
             }
             return bollean;
@@ -116,28 +114,19 @@ namespace Taxopark
 
         }
 
-        private void timer1_Tick(object sender, EventArgs e)//таймер отслеживающий приехал ли водитель
+
+        private void openInfoYourCall()
         {
-            if (alertsCall == "1")
-            {
-                MessageBox.Show("Водитель ожидает вас на месте");
-                timer1.Enabled = false;
-            }
-        }
-        private void infoYourCall()
-        {
-            //label4.Visible = true;
-            //label4.Text = "";
-            ////label4.Location = new Point(12, 245);
-            //label4.Size = new Size(585, 149);
-            //label4.Left = 12;
-            //label4.Top = 245;
-            //label4.Text +=  "Информация о вашем вызове:" + "\n";
-            //label4.Text += deliverFrom + " ----------> "+ deliverTo+"\n";
-            //if (alertsCall == "1")
-            //{
-            //    label4.Text += "Водитель уже ожидает вас";
-            //}
+            InfoYourCall info = new InfoYourCall();
+
+            info.userName = userName;
+            info.phoneUser = phoneUser;
+
+            info.deliverFrom = deliverFrom;
+            info.deliverTo = deliverTo;
+
+            info.Show();
+            Close();
         }
     }
 }
