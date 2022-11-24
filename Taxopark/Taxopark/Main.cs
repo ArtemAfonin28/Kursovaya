@@ -19,6 +19,7 @@ namespace Taxopark
         public string phoneUser;
         string deliverFrom;//От
         string deliverTo;//До
+        int tarif = 0;
         public Main()
         {
             InitializeComponent();
@@ -57,6 +58,7 @@ namespace Taxopark
                     if (command.ExecuteNonQuery() == 1)
                     {
                         MessageBox.Show("Вы успешно заказали такси");
+                        haveCall();
                         openInfoYourCall();
                     }
                     else MessageBox.Show("Уже есть");
@@ -75,6 +77,7 @@ namespace Taxopark
                 MessageBox.Show("Вы уже закали такси");
                 openInfoYourCall();
             }
+            fillComboBox();
         }
 
         private void guna2ImageButton1_Click(object sender, EventArgs e)
@@ -127,6 +130,49 @@ namespace Taxopark
 
             info.Show();
             Close();
+        }
+
+        private void Button1_Click(object sender, EventArgs e)
+        {
+            button1.BorderColor= Color.Green;
+            int tarif = 1;
+            button2.BorderColor = Color.Yellow;
+            button3.BorderColor = Color.Yellow;
+        }
+
+        private void Button2_Click(object sender, EventArgs e)
+        {
+            button2.BorderColor = Color.Green;
+            int tarif = 2;
+            button1.BorderColor = Color.Yellow;
+            button3.BorderColor = Color.Yellow;
+        }
+
+        private void Button3_Click(object sender, EventArgs e)
+        {
+            button3.BorderColor = Color.Green;
+            int tarif = 3;
+            button1.BorderColor = Color.Yellow;
+            button2.BorderColor = Color.Yellow;
+        }
+        private void fillComboBox()
+        {
+            comboBox1.Items.Clear();
+
+            DB db = new DB();
+            DataTable table = new DataTable();
+            MySqlDataAdapter adapter = new MySqlDataAdapter();
+            MySqlCommand command = new MySqlCommand("SELECT * FROM 19055_taxopark.add_services;", db.getConnection());
+            adapter.SelectCommand = command;
+            adapter.Fill(table);
+            comboBox1.Items.Add("Без дополнительной услуги");
+            comboBox1.StartIndex= 0;
+            for (int i = 0; i < table.Rows.Count; i++)
+            {
+                comboBox1.Items.Add(table.Rows[i][1].ToString());
+
+            }
+
         }
     }
 }

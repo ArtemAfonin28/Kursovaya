@@ -2309,7 +2309,7 @@
   <data name="guna2ImageButton1.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAlgAAAH9CAYAAADGXwIcAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAACe
-        6wAAnusBYxZPWQAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAEyHSURBVHhe7d13
+        6AAAnugBzq9uNAAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAEyHSURBVHhe7d13
         vBXVuf/xcOgCImABVETE3hVU7B1RURAwzeTG39X0GJObem9Uiii2iF2x995774oFUbF3RWxYUYq09fuu
         7SEOmwc45+xZUz9/vPMKj7rX7NnPrPmy96yZHzjngFQd8YMf9JQfyykyQT6VK+UA6WL9NwAAZJlZBJKg
         8LS3vCduCebKwzLUeg0AALLILAIhKSy1krFiBarFmSc/sl4PAICsMYtAKApJy8i99aGpsebIvtbrAgCQ
@@ -2639,4 +2639,10 @@
         8NRbRsqrMkEulcNkqKxr/TfOuR/8f1S9t0Kn1ehhAAAAAElFTkSuQmCC
 </value>
   </data>
+  <metadata name="mySqlCommand1.DesignTimeVisible" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>False</value>
+  </metadata>
+  <metadata name="mySqlCommand1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 17</value>
+  </metadata>
 </root>

@@ -32,6 +32,22 @@ namespace Taxopark
             Close();
         }
 
+        private void button3_Click(object sender, EventArgs e) //Удаление заказа
+        {
+            string phoneCall = phoneUser;
+
+            DB db = new DB();
+            MySqlCommand command = new MySqlCommand("DELETE FROM `call` WHERE `Telephone_Call`=@phoneCall;", db.getConnection());
+            command.Parameters.Add("@phoneCall", MySqlDbType.VarChar).Value = phoneCall;
+            db.openConnection();
+            command.ExecuteNonQuery();
+            db.closeConnection();
+            MessageBox.Show("Вы отменили свой заказ");
+            Avtoriz avt = new Avtoriz();
+            avt.Show();
+            Close();
+        }
+
         private void InfoYourCall_Load(object sender, EventArgs e)
         {
             label1.Text = userName;
