@@ -1,0 +1,5 @@
+INSERT INTO `add_services`(`Id_Services`, `Name_Services`, `Opisanie_Services`, `Price_Services`) VALUES 
+('1','1','1','1'),('2','2','2','2'),('3','3','3','3')
+
+INSERT INTO `drivers`(`Id_Drivers`, `FIO_Drivers`, `Age_Drivers`, `Gender_Drivers`, `Address_Drivers`, `Telephone_Drivers`, `Passport_Data_Drivers`, `Password_Drivers`) VALUES
+('1','1','1','1','1','1','1','1'),('2','2','2','2','2','2','2','2'),('3','3','3','3','3','3','3','3')
