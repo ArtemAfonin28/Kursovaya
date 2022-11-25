@@ -42,6 +42,7 @@ namespace Taxopark
             {
                 Main main = new Main();
                 main.userName = table.Rows[0][1].ToString();
+                main.idUser = Convert.ToInt32(table.Rows[0][0]);
                 main.phoneUser = phoneUser;
                 main.Show();
                 Hide();
@@ -72,11 +73,5 @@ namespace Taxopark
             Hide();
         }
 
-        private void button2_Click(object sender, EventArgs e)
-        {
-            MainVod mainVod = new MainVod();
-            mainVod.Show();
-            Hide();
-        }
     }
 }

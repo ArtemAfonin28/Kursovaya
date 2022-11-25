@@ -132,6 +132,9 @@
   <metadata name="Column5.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
+  <metadata name="Column6.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="pictureBox1.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -140,7 +143,7 @@
         j8u958wM1J04NPniPpikyNzekX/lXzvLb6zSpMEGu0GYp53+mUfl+XylZvWlZb3421mKhnkonauSMM0K
         qB2K29Mitaxi687rnYhnYicySSR+Eu9FJrJsd3smnoQ/nvY2a8Pksm/7qh1czunQxWHAhDExBS1pos4p
         bQ6kLhkBD+SE0pihelPNFNyKcjm5HIs8kW5Tkbdd5nWVMpDHWF424R4jT5uH/d/vtY+LcrPWnKdBFpSt
-        BVV9NIL3R1j3YfMZGjcVWSu/31Yx0y5n/vVG+AL8cFBvZ+C2/QAAAAlwSFlzAAALEAAACxABrSO9dQAA
+        BVV9NIL3R1j3YfMZGjcVWSu/31Yx0y5n/vVG+AL8cFBvZ+C2/QAAAAlwSFlzAAALDgAACw4BQL7hQQAA
         AAd0SU1FB+YLFgoULWiNZZsAAIe9SURBVHhe7Pph0uNGsmhb9htfz3883VevXLdU0lYmIwDyA4G1zPa/
         U6lM0iMIh53/DwAAn/X//f/+f/9/ks5rjhYAAAAAPFe9OJP0/uYIAgAAAMA91UsxST/fHFEAAAAA+E71
         0kvSdzTHGAAAAACuqV5qSbpPc9QBAAAA4LPqZZWk5zVXAgAAAACco15CSdK/NVcHAAAAAPxevWCSpN3m
@@ -726,7 +729,7 @@
   <data name="guna2ImageButton1.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAlgAAAH9CAYAAADGXwIcAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAACe
-        7AAAnuwBMVLpJgAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAEyHSURBVHhe7d13
+        6gAAnuoBsVGtvQAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAEyHSURBVHhe7d13
         vBXVuf/xcOgCImABVETE3hVU7B1RURAwzeTG39X0GJObem9Uiii2iF2x995774oFUbF3RWxYUYq09fuu
         7SEOmwc45+xZUz9/vPMKj7rX7NnPrPmy96yZHzjngFQd8YMf9JQfyykyQT6VK+UA6WL9NwAAZJlZBJKg
         8LS3vCduCebKwzLUeg0AALLILAIhKSy1krFiBarFmSc/sl4PAICsMYtAKApJy8i99aGpsebIvtbrAgCQ
