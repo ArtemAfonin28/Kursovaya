@@ -17,11 +17,9 @@ namespace Taxopark
     {
         public string userName;
         public string phoneUser;
-        public int idUser;
         string deliverFrom;//От
         string deliverTo;//До
         int tarif = 0;
-        int addServices = 0;
         public Main()
         {
             InitializeComponent();
@@ -38,27 +36,23 @@ namespace Taxopark
                 DateTime dateTime = new DateTime();
                 dateTime = DateTime.UtcNow;
 
-                if (TextBox1.Text == "" || TextBox2.Text == "" || tarif == 0)
+                if (TextBox1.Text == "" || TextBox2.Text == "")
                 {
                     MessageBox.Show("Заполните все поля");
                 }
                 else
                 {
                     string phoneCall = phoneUser;
-                    int idUserCall = idUser;
                     string otkuda = TextBox1.Text;
                     string kuda = TextBox2.Text;
-                    int addServicesCall = addServices;
+
                     DB db = new DB();
-                    MySqlCommand command = new MySqlCommand("insert into `Call` (`DataTime_Call`,`Telephone_Call`,`Otkuda`,`Kuda`,`Сlient_Id_Сlient`,`Add_Services_Id_Services`,`Drivers_Id_Drivers`) " +
-                        "values (@dateTime,@phoneCall,@otkuda,@kuda,@idUserCall,@addServices,0)", db.getConnection());
+                    MySqlCommand command = new MySqlCommand("insert into `Call` (`DataTime_Call`,`Telephone_Call`,`Otkuda`,`Kuda`) " +
+                        "values (@dateTime,@phoneCall,@otkuda,@kuda)", db.getConnection());
                     command.Parameters.Add("@dateTime", MySqlDbType.DateTime).Value = dateTime;
                     command.Parameters.Add("@phoneCall", MySqlDbType.VarChar).Value = phoneCall;
                     command.Parameters.Add("@Otkuda", MySqlDbType.VarChar).Value = otkuda;
                     command.Parameters.Add("@Kuda", MySqlDbType.VarChar).Value = kuda;
-
-                    command.Parameters.Add("@idUserCall", MySqlDbType.Int32).Value = idUserCall;
-                    command.Parameters.Add("@addServices", MySqlDbType.Int32).Value = addServicesCall;
 
                     db.openConnection();
                     if (command.ExecuteNonQuery() == 1)
@@ -138,30 +132,29 @@ namespace Taxopark
             Close();
         }
 
-
         private void Button1_Click(object sender, EventArgs e)
         {
             button1.BorderColor= Color.Green;
-            tarif = 1;
+            int tarif = 1;
             button2.BorderColor = Color.Yellow;
             button3.BorderColor = Color.Yellow;
         }
+
         private void Button2_Click(object sender, EventArgs e)
         {
             button2.BorderColor = Color.Green;
-            tarif = 2;
+            int tarif = 2;
             button1.BorderColor = Color.Yellow;
             button3.BorderColor = Color.Yellow;
         }
+
         private void Button3_Click(object sender, EventArgs e)
         {
             button3.BorderColor = Color.Green;
-            tarif = 3;
+            int tarif = 3;
             button1.BorderColor = Color.Yellow;
             button2.BorderColor = Color.Yellow;
         }
-
-
         private void fillComboBox()
         {
             comboBox1.Items.Clear();
@@ -174,18 +167,12 @@ namespace Taxopark
             adapter.Fill(table);
             comboBox1.Items.Add("Без дополнительной услуги");
             comboBox1.StartIndex= 0;
-            for (int i = 1; i < table.Rows.Count; i++)
+            for (int i = 0; i < table.Rows.Count; i++)
             {
                 comboBox1.Items.Add(table.Rows[i][1].ToString());
 
             }
 
         }
-
-        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            addServices = comboBox1.SelectedIndex;
-        }
-
     }
 }

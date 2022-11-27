@@ -43,7 +43,6 @@ namespace Taxopark
             if (table.Rows.Count > 0)                      
             {
                 MainVod mainVod = new MainVod();
-                mainVod.idDriver = Convert.ToInt32(table.Rows[0][0]);
                 mainVod.Show();
                 Close();
             }
