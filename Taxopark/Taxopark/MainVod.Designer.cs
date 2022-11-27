@@ -38,7 +38,8 @@
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column5 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column6 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.button1 = new Guna.UI2.WinForms.Guna2Button();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -48,6 +49,7 @@
             this.button3 = new Guna.UI2.WinForms.Guna2Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.guna2ImageButton1 = new Guna.UI2.WinForms.Guna2ImageButton();
+            this.button4 = new Guna.UI2.WinForms.Guna2Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -83,7 +85,8 @@
             this.Column2,
             this.Column3,
             this.Column4,
-            this.Column5});
+            this.Column5,
+            this.Column6});
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
             dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
@@ -127,7 +130,7 @@
             // 
             // Column1
             // 
-            this.Column1.FillWeight = 124.9465F;
+            this.Column1.FillWeight = 113.9218F;
             this.Column1.HeaderText = "Время вызова";
             this.Column1.MinimumWidth = 6;
             this.Column1.Name = "Column1";
@@ -137,7 +140,7 @@
             // 
             // Column2
             // 
-            this.Column2.FillWeight = 104.9465F;
+            this.Column2.FillWeight = 95.68652F;
             this.Column2.HeaderText = "Номер клиента";
             this.Column2.MinimumWidth = 6;
             this.Column2.Name = "Column2";
@@ -147,7 +150,7 @@
             // 
             // Column3
             // 
-            this.Column3.FillWeight = 104.9465F;
+            this.Column3.FillWeight = 95.68652F;
             this.Column3.HeaderText = "Откуда";
             this.Column3.MinimumWidth = 6;
             this.Column3.Name = "Column3";
@@ -157,7 +160,7 @@
             // 
             // Column4
             // 
-            this.Column4.FillWeight = 104.9465F;
+            this.Column4.FillWeight = 95.68652F;
             this.Column4.HeaderText = "Куда";
             this.Column4.MinimumWidth = 6;
             this.Column4.Name = "Column4";
@@ -167,12 +170,22 @@
             // 
             // Column5
             // 
-            this.Column5.FillWeight = 80.21391F;
-            this.Column5.HeaderText = "Выбрать";
+            this.Column5.FillWeight = 145.8823F;
+            this.Column5.HeaderText = "Доп. услуга";
             this.Column5.MinimumWidth = 6;
             this.Column5.Name = "Column5";
             this.Column5.ReadOnly = true;
             this.Column5.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.Column5.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // Column6
+            // 
+            this.Column6.FillWeight = 73.13622F;
+            this.Column6.HeaderText = "Выбрать";
+            this.Column6.MinimumWidth = 6;
+            this.Column6.Name = "Column6";
+            this.Column6.ReadOnly = true;
+            this.Column6.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             // 
             // button1
             // 
@@ -187,7 +200,7 @@
             this.button1.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.button1.ForeColor = System.Drawing.Color.Black;
             this.button1.Location = new System.Drawing.Point(144, 274);
-            this.button1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button1.Margin = new System.Windows.Forms.Padding(4);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(303, 54);
             this.button1.TabIndex = 10;
@@ -249,7 +262,7 @@
             this.button2.Font = new System.Drawing.Font("Comic Sans MS", 12F);
             this.button2.ForeColor = System.Drawing.Color.Black;
             this.button2.Location = new System.Drawing.Point(144, 546);
-            this.button2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button2.Margin = new System.Windows.Forms.Padding(4);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(303, 84);
             this.button2.TabIndex = 15;
@@ -269,7 +282,7 @@
             this.button3.Font = new System.Drawing.Font("Comic Sans MS", 12F);
             this.button3.ForeColor = System.Drawing.Color.Black;
             this.button3.Location = new System.Drawing.Point(144, 748);
-            this.button3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button3.Margin = new System.Windows.Forms.Padding(4);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(303, 53);
             this.button3.TabIndex = 16;
@@ -298,18 +311,40 @@
             this.guna2ImageButton1.ImageRotate = 0F;
             this.guna2ImageButton1.ImageSize = new System.Drawing.Size(45, 45);
             this.guna2ImageButton1.Location = new System.Drawing.Point(12, 735);
-            this.guna2ImageButton1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.guna2ImageButton1.Margin = new System.Windows.Forms.Padding(4);
             this.guna2ImageButton1.Name = "guna2ImageButton1";
             this.guna2ImageButton1.PressedState.ImageSize = new System.Drawing.Size(64, 64);
             this.guna2ImageButton1.Size = new System.Drawing.Size(85, 66);
             this.guna2ImageButton1.TabIndex = 18;
             this.guna2ImageButton1.Click += new System.EventHandler(this.guna2ImageButton1_Click);
             // 
+            // button4
+            // 
+            this.button4.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.button4.BorderRadius = 10;
+            this.button4.BorderThickness = 3;
+            this.button4.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.button4.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.button4.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.button4.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.button4.Enabled = false;
+            this.button4.FillColor = System.Drawing.Color.Silver;
+            this.button4.Font = new System.Drawing.Font("Comic Sans MS", 12F);
+            this.button4.ForeColor = System.Drawing.Color.Black;
+            this.button4.Location = new System.Drawing.Point(144, 657);
+            this.button4.Margin = new System.Windows.Forms.Padding(4);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(303, 53);
+            this.button4.TabIndex = 20;
+            this.button4.Text = "Завершить поездку";
+            this.button4.Click += new System.EventHandler(this.button4_Click);
+            // 
             // MainVod
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(609, 814);
+            this.Controls.Add(this.button4);
             this.Controls.Add(this.guna2ImageButton1);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.button3);
@@ -343,11 +378,13 @@
         private Guna.UI2.WinForms.Guna2Button button2;
         private Guna.UI2.WinForms.Guna2Button button3;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private Guna.UI2.WinForms.Guna2ImageButton guna2ImageButton1;
+        private Guna.UI2.WinForms.Guna2Button button4;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn Column5;
-        private Guna.UI2.WinForms.Guna2ImageButton guna2ImageButton1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn Column6;
     }
 }

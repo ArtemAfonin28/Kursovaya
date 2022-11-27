@@ -15,11 +15,11 @@ namespace Taxopark
     {
         public string userName, phoneUser;
 
-        public string driver, avto;
+        public string driver = "", avto = "";
 
         public string deliverFrom, deliverTo;//От-До
 
-        public string alert, accepted;
+        public string alert, accepted = "";
         public InfoYourCall()
         {
             InitializeComponent();
@@ -53,6 +53,7 @@ namespace Taxopark
             label1.Text = userName;
             fillTable();
             infoLabel4();
+            checkAccept();
         }
 
         private void fillTable()
@@ -89,10 +90,34 @@ namespace Taxopark
         private void infoLabel4()
         {
             label4.Text = "";
-            label4.Text += "\n";
-            label4.Text += "\n";
+            label4.Text += driver + "\n";
+            label4.Text += avto + "\n";
             label4.Text += deliverFrom + "\n";
             label4.Text += deliverTo;
+        }
+
+        private void checkAccept()//кто принял заказ
+        {
+            if (accepted == "1")
+            {
+                string phoneCall = phoneUser;
+
+                DB db = new DB();
+                DataTable table = new DataTable();
+                MySqlDataAdapter adapter = new MySqlDataAdapter();
+
+                MySqlCommand command = new MySqlCommand("SELECT `Accepted`,`FIO_Drivers`,`Marka_Car` FROM `call`,`drivers`,`сar` WHERE " +
+                    "(`Drivers_Id_Drivers`=`Id_Drivers`) and (`Сar_Id_Сar`=`Id_Сar`) and (`Telephone_Call` = @phoneCall) and (`Accepted` = 1);", db.getConnection());
+                command.Parameters.Add("@phoneCall", MySqlDbType.VarChar).Value = phoneCall;
+
+                adapter.SelectCommand = command;
+                adapter.Fill(table);
+
+                driver = (table.Rows[0][1]).ToString();
+                avto = (table.Rows[0][2]).ToString();
+                infoLabel4();
+            }
+
         }
     }
 }

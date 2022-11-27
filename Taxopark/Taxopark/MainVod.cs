@@ -16,6 +16,8 @@ namespace Taxopark
 {
     public partial class MainVod : Form
     {
+        public int idDriver;
+
         bool driverNoCalls = true;
         string Telephone_Call = "";
         int check = 0;
@@ -27,14 +29,13 @@ namespace Taxopark
             updateDataInDataGrid();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void button1_Click(object sender, EventArgs e)//принятие заказа
         {
             if (rowIndex != -1)
             {
                 if (driverNoCalls == true)
                 {
                     //Выборка номера телефона из DataGridView
-
                     Telephone_Call = dataGridView1[1, rowIndex].Value.ToString();
 
 
@@ -42,10 +43,13 @@ namespace Taxopark
                     DateTime Accepted_DataTime = new DateTime();
                     Accepted_DataTime = DateTime.UtcNow;
 
+                    int idDriverCall = idDriver;
+
                     DB db = new DB();
-                    MySqlCommand command = new MySqlCommand("UPDATE `Call` SET `Accepted` = 1, `Accepted_DataTime`= @Accepted_DataTime WHERE `Telephone_Call` = @Telephone_Call;", db.getConnection());
+                    MySqlCommand command = new MySqlCommand("UPDATE `Call` SET `Accepted` = 1, `Accepted_DataTime`= @Accepted_DataTime,Drivers_Id_Drivers=@idDriverCall WHERE `Telephone_Call` = @Telephone_Call;", db.getConnection());
                     command.Parameters.Add("@Accepted_DataTime", MySqlDbType.DateTime).Value = Accepted_DataTime;
                     command.Parameters.Add("@Telephone_Call", MySqlDbType.VarChar).Value = Telephone_Call;
+                    command.Parameters.Add("@idDriverCall", MySqlDbType.Int32).Value = idDriverCall;
                     db.openConnection();
                     command.ExecuteNonQuery();
                     MessageBox.Show("Вы приняли заказ");
@@ -55,12 +59,8 @@ namespace Taxopark
                     label2.Visible = true;
                     label3.Visible = true;
 
-                    for (int i = 0; i < dataGridView1.ColumnCount - 1; i++)
-                    {
-                        label2.Text += dataGridView1[i, rowIndex].Value.ToString();
-                        label2.Text += "\n";
-                    }
                     driverNoCalls = false;
+                    fillLabel4();
                     updateDataInDataGrid();
                 }
                 else
@@ -81,7 +81,7 @@ namespace Taxopark
         private void getCheckBox()
         {
             DataGridViewCheckBoxCell ch3 = new DataGridViewCheckBoxCell();
-            ch3 = (DataGridViewCheckBoxCell)dataGridView1.Rows[dataGridView1.CurrentRow.Index].Cells[4];
+            ch3 = (DataGridViewCheckBoxCell)dataGridView1.Rows[dataGridView1.CurrentRow.Index].Cells[5];
             if (ch3.Value == null)
                 ch3.Value = false;
 
@@ -107,12 +107,19 @@ namespace Taxopark
         }
         private void MainVod_Load(object sender, EventArgs e)
         {
-
+            checkDriverNoCalls();
+            if (driverNoCalls == false)
+            {
+                label3.Visible = true;
+                label2.Visible = true;
+                label5.Visible = false;
+                fillLabel4();
+            }
         }
 
-        private void button3_Click(object sender, EventArgs e)
+        private void button3_Click(object sender, EventArgs e)//Отказаться от заказа
         {
-            if (Telephone_Call == "")
+            if (driverNoCalls == true)
             {
                 MessageBox.Show("У вас нет принятого вызова");
             }
@@ -151,19 +158,20 @@ namespace Taxopark
 
             DB db = new DB();
             db.openConnection();
-            string query = "SELECT DataTime_Call,Telephone_Call,Otkuda,Kuda FROM 19055_Taxopark.Call where Accepted is null;";
+            string query = "SELECT `DataTime_Call`,`Telephone_Call`,`Otkuda`,`Kuda`,`Name_Services` FROM `call`,`add_services` WHERE (`Add_Services_Id_Services` = `Id_Services`) and (`Accepted` is null);";
             MySqlCommand command = new MySqlCommand(query, db.getConnection());
             MySqlDataReader reader = command.ExecuteReader();
             List<string[]> data = new List<string[]>();
 
             while (reader.Read())
             {
-                data.Add(new string[4]);
+                data.Add(new string[5]);
 
                 data[data.Count - 1][0] = reader[0].ToString();
                 data[data.Count - 1][1] = reader[1].ToString();
                 data[data.Count - 1][2] = reader[2].ToString();
                 data[data.Count - 1][3] = reader[3].ToString();
+                data[data.Count - 1][4] = reader[4].ToString();
             }
 
 
@@ -185,20 +193,89 @@ namespace Taxopark
 
         private void button2_Click(object sender, EventArgs e)//Оповещение
         {
-            if (Telephone_Call == "")
+            if (driverNoCalls == true)
             {
                 MessageBox.Show("У вас нет принятого вызова");
             }
             else
             {
                 DB db = new DB();
-                MySqlCommand command = new MySqlCommand("UPDATE `Call` SET `Alerts` = 1 WHERE `Telephone_Call` = @Telephone_Call;", db.getConnection());
-                command.Parameters.Add("@Telephone_Call", MySqlDbType.VarChar).Value = Telephone_Call;
+                MySqlCommand command = new MySqlCommand("UPDATE `Call` SET `Alerts` = 1 WHERE `Drivers_Id_Drivers`=@idDriver;", db.getConnection());
+                command.Parameters.Add("@idDriver", MySqlDbType.Int32).Value = idDriver;
                 db.openConnection();
                 command.ExecuteNonQuery();
                 MessageBox.Show("Оповещение придет клиенту как только он войдет в приложение");
+                button4.Enabled = true;
                 db.openConnection();
             }
+        }
+
+        private void button4_Click(object sender, EventArgs e)//завершить поездку
+        {
+            if (driverNoCalls == true)
+            {
+                MessageBox.Show("У вас нет принятого вызова");
+            }
+            else
+            {
+                DB db = new DB();
+                MySqlCommand command = new MySqlCommand("UPDATE `Call` SET `Finished` = 1 WHERE `Telephone_Call` = `Drivers_Id_Drivers`=@idDriver;", db.getConnection());
+                command.Parameters.Add("@idDriver", MySqlDbType.Int32).Value = idDriver;
+                db.openConnection();
+                command.ExecuteNonQuery();
+                MessageBox.Show("Вы завершили вызов");
+                db.openConnection();
+                deleteFinishedCall();
+            }
+        }
+        private void deleteFinishedCall()//удаление завершенного заказа
+        {
+            DB db = new DB();
+            MySqlCommand command = new MySqlCommand("DELETE FROM `call` WHERE `Drivers_Id_Drivers`=@idDriver;", db.getConnection());
+            command.Parameters.Add("@idDriver", MySqlDbType.Int32).Value = idDriver;
+            db.openConnection();
+            command.ExecuteNonQuery();
+            db.closeConnection();
+        }
+        private void fillLabel4()//заполнение поля с информацие о текущем заказе
+        {
+            if (driverNoCalls == false)
+            {
+                DB db = new DB();
+                DataTable table = new DataTable();
+                MySqlDataAdapter adapter = new MySqlDataAdapter();
+                MySqlCommand command = new MySqlCommand("SELECT DataTime_Call,Telephone_Call,Otkuda,Kuda FROM 19055_taxopark.call where Drivers_Id_Drivers=@idDriver;", db.getConnection());
+                command.Parameters.Add("@idDriver", MySqlDbType.Int32).Value = idDriver;
+                adapter.SelectCommand = command;
+                adapter.Fill(table);
+
+                for (int i = 0; i < 4; i++)
+                {
+                    label2.Text += table.Rows[0][i].ToString() + "\n";
+                }
+
+                db.closeConnection();
+            }
+
+        }
+        private void checkDriverNoCalls()
+        {
+            DB db = new DB();
+            DataTable table = new DataTable();
+            MySqlDataAdapter adapter = new MySqlDataAdapter();
+            MySqlCommand command = new MySqlCommand("SELECT DataTime_Call,Telephone_Call,Otkuda,Kuda FROM 19055_taxopark.call where Drivers_Id_Drivers=@idDriver;", db.getConnection());
+            command.Parameters.Add("@idDriver", MySqlDbType.Int32).Value = idDriver;
+
+            adapter.SelectCommand = command;
+            adapter.Fill(table);
+
+            db.closeConnection();
+
+            if (table.Rows.Count > 0)
+            {
+                driverNoCalls= false;
+            }
+            else driverNoCalls = true;
         }
     }
 }
