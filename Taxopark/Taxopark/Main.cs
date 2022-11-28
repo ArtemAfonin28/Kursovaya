@@ -54,8 +54,8 @@ namespace Taxopark
                         "values (@dateTime,@phoneCall,@otkuda,@kuda,@idUserCall,@addServices,0)", db.getConnection());
                     command.Parameters.Add("@dateTime", MySqlDbType.DateTime).Value = dateTime;
                     command.Parameters.Add("@phoneCall", MySqlDbType.VarChar).Value = phoneCall;
-                    command.Parameters.Add("@Otkuda", MySqlDbType.VarChar).Value = otkuda;
-                    command.Parameters.Add("@Kuda", MySqlDbType.VarChar).Value = kuda;
+                    command.Parameters.Add("@otkuda", MySqlDbType.VarChar).Value = otkuda;
+                    command.Parameters.Add("@kuda", MySqlDbType.VarChar).Value = kuda;
 
                     command.Parameters.Add("@idUserCall", MySqlDbType.Int32).Value = idUserCall;
                     command.Parameters.Add("@addServices", MySqlDbType.Int32).Value = addServicesCall;
@@ -184,7 +184,8 @@ namespace Taxopark
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            addServices = comboBox1.SelectedIndex;
+            //addServices = comboBox1.SelectedIndex;
+            label3.Text = comboBox1.SelectedIndex.ToString();
         }
 
     }
