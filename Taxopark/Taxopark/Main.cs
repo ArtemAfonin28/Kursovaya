@@ -162,14 +162,14 @@ namespace Taxopark
         }
 
 
-        private void fillComboBox()
+        private void fillComboBox()//Заполнение выбора тарифа
         {
             comboBox1.Items.Clear();
 
             DB db = new DB();
             DataTable table = new DataTable();
             MySqlDataAdapter adapter = new MySqlDataAdapter();
-            MySqlCommand command = new MySqlCommand("SELECT * FROM 19055_taxopark.add_services;", db.getConnection());
+            MySqlCommand command = new MySqlCommand("SELECT * FROM 19055_Taxopark.Add_Services;", db.getConnection());
             adapter.SelectCommand = command;
             adapter.Fill(table);
             comboBox1.Items.Add("Без дополнительной услуги");
@@ -184,8 +184,7 @@ namespace Taxopark
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            //addServices = comboBox1.SelectedIndex;
-            label3.Text = comboBox1.SelectedIndex.ToString();
+            addServices = comboBox1.SelectedIndex;
         }
 
     }

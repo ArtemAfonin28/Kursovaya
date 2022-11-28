@@ -602,8 +602,6 @@ C:\Users\19055\Desktop\Kursovaya\Taxopark\Taxopark\bin\Debug\pt-BR\Microsoft.Dat
 C:\Users\19055\Desktop\Kursovaya\Taxopark\Taxopark\bin\Debug\ru\Microsoft.Data.SqlClient.resources.dll
 C:\Users\19055\Desktop\Kursovaya\Taxopark\Taxopark\bin\Debug\zh-Hans\Microsoft.Data.SqlClient.resources.dll
 C:\Users\19055\Desktop\Kursovaya\Taxopark\Taxopark\bin\Debug\zh-Hant\Microsoft.Data.SqlClient.resources.dll
-C:\Users\19055\Desktop\Kursovaya\Taxopark\Taxopark\obj\Debug\Taxopark.csproj.AssemblyReference.cache
-C:\Users\19055\Desktop\Kursovaya\Taxopark\Taxopark\obj\Debug\Taxopark.csproj.SuggestedBindingRedirects.cache
 C:\Users\19055\Desktop\Kursovaya\Taxopark\Taxopark\obj\Debug\Taxopark.Avtoriz.resources
 C:\Users\19055\Desktop\Kursovaya\Taxopark\Taxopark\obj\Debug\Taxopark.AvtorizVod.resources
 C:\Users\19055\Desktop\Kursovaya\Taxopark\Taxopark\obj\Debug\Taxopark.Main.resources
@@ -931,3 +929,5 @@ C:\Users\19055\Desktop\DDD\Kursovaya\Taxopark\Taxopark\obj\Debug\Taxopark.csproj
 C:\Users\19055\Desktop\DDD\Kursovaya\Taxopark\Taxopark\obj\Debug\Taxopark.csproj.CopyComplete
 C:\Users\19055\Desktop\DDD\Kursovaya\Taxopark\Taxopark\obj\Debug\Taxopark.exe
 C:\Users\19055\Desktop\DDD\Kursovaya\Taxopark\Taxopark\obj\Debug\Taxopark.pdb
+C:\Users\19055\Desktop\Kursovaya\Taxopark\Taxopark\obj\Debug\Taxopark.csprojAssemblyReference.cache
+C:\Users\19055\Desktop\Kursovaya\Taxopark\Taxopark\obj\Debug\Taxopark.InfoYourCall.resources
