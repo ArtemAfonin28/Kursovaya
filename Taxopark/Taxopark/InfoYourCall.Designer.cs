@@ -126,7 +126,7 @@
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(226, 75);
             this.label5.TabIndex = 20;
-            this.label5.Text = "Ваш водитель еще в пути/ожидает вас";
+            this.label5.Text = "Вас заказ не был еще принят";
             this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // guna2ImageButton1
@@ -161,7 +161,7 @@
             // 
             // update
             // 
-            this.update.Interval = 2000;
+            this.update.Interval = 1000;
             this.update.Tick += new System.EventHandler(this.update_Tick);
             // 
             // InfoYourCall
@@ -182,6 +182,7 @@
             this.Name = "InfoYourCall";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "infoYourCall";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.InfoYourCall_FormClosed);
             this.Load += new System.EventHandler(this.InfoYourCall_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).EndInit();

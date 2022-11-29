@@ -19,7 +19,11 @@ namespace Taxopark
 
         public string deliverFrom, deliverTo;//От-До и номер машины
 
-        public int alert = 0, accepted = 0;
+        public string alert, accepted;
+
+        string Finished;
+
+        DataTable  table = new DataTable();
         public InfoYourCall()
         {
             InitializeComponent();
@@ -48,14 +52,20 @@ namespace Taxopark
             Close();
         }
 
+        private void InfoYourCall_FormClosed(object sender, FormClosedEventArgs e)
+        {
+
+        }
+
         private void update_Tick(object sender, EventArgs e)
         {
-            DB db = new DB();
 
-            DataTable table = new DataTable();
+            table.Clear();
+
+            DB db = new DB();
             MySqlDataAdapter adapter = new MySqlDataAdapter();
 
-            MySqlCommand command = new MySqlCommand("SELECT `FIO_Drivers`,`Marka_Car`,`Register_Number` FROM `Call`,`Drivers`,`Сar` " +
+            MySqlCommand command = new MySqlCommand("SELECT `FIO_Drivers`,`Marka_Car`,`Register_Number`,`Alerts`,`Finished` FROM `Call`,`Drivers`,`Сar` " +
                 "WHERE(`Drivers_Id_Drivers`=`Id_Drivers`) AND(`Сar_Id_Сar`=`Id_Сar`) AND (`Accepted`= 1) AND(`Telephone_Call`=@phoneUser); ; ", db.getConnection());
             command.Parameters.Add("@phoneUser", MySqlDbType.VarChar).Value = phoneUser;
 
@@ -63,12 +73,26 @@ namespace Taxopark
             adapter.Fill(table);
             if (table.Rows.Count > 0)
             {
-                label2.Text = "";
-                label2.Text += table.Rows[0][0].ToString();
-                label2.Text += table.Rows[0][1].ToString();
-                label2.Text += table.Rows[0][2].ToString();
+                label5.Text = "Водитель уже в пути";
 
+                driver = table.Rows[0][0].ToString();
+                avto = table.Rows[0][1].ToString();
+                numberAvto = table.Rows[0][2].ToString();
 
+                alert = table.Rows[0][3].ToString();
+
+                if(alert == "1")
+                {
+                    label5.Text = "Водитель ожидает вас на месте";
+                }
+
+                DataInCall();
+                Finished = table.Rows[0][4].ToString();
+            }
+
+            if (Finished == "1")
+            {
+                pffff();
             }
 
         }
@@ -86,12 +110,36 @@ namespace Taxopark
             update.Enabled = true;
         }
 
-        private void data()
+        private void DataInCall()
         {
-
+            label4.Text = "";
+            label4.Text += driver + "\n";
+            label4.Text += avto + "\n";
+            label4.Text += numberAvto + "\n";
+            label4.Text += deliverFrom + "\n";
+            label4.Text += deliverTo;
         }
 
+        private void Delete()
+        {
+            DB db = new DB();
+            MySqlCommand command = new MySqlCommand("DELETE FROM `Call` WHERE (`Finished`=1) and (`Telephone_Call`=@phoneUser);", db.getConnection());
+            command.Parameters.Add("@phoneUser", MySqlDbType.VarChar).Value = phoneUser;
+            db.openConnection();
+            command.ExecuteNonQuery();
+            db.closeConnection();
+        }
 
+        private void pffff()
+        {
+            Finished = "0";
+            update.Enabled = false;
+            Delete();
+            MessageBox.Show("Вызов завершен");
+            Avtoriz avt = new Avtoriz();
+            avt.Show();
+            Close();
+        }
 
  
 

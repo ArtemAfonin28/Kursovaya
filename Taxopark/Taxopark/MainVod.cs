@@ -233,7 +233,7 @@ namespace Taxopark
 
                 button4.Enabled = false;
 
-                deleteFinishedCall();
+                //deleteFinishedCall();
             }
         }
         private void deleteFinishedCall()//удаление завершенного заказа
