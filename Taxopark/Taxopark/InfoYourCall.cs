@@ -15,14 +15,15 @@ namespace Taxopark
     {
         public string userName, phoneUser;
 
-        public string driver = "", avto = "";
+        public string driver = "", avto = "", numberAvto = "";
 
-        public string deliverFrom, deliverTo;//От-До
+        public string deliverFrom, deliverTo;//От-До и номер машины
 
-        public string alert, accepted = "";
+        public int alert = 0, accepted = 0;
         public InfoYourCall()
         {
             InitializeComponent();
+
         }
 
         private void guna2ImageButton1_Click(object sender, EventArgs e)
@@ -34,11 +35,10 @@ namespace Taxopark
 
         private void button3_Click(object sender, EventArgs e) //Удаление заказа
         {
-            string phoneCall = phoneUser;
-
+            
             DB db = new DB();
-            MySqlCommand command = new MySqlCommand("DELETE FROM `call` WHERE `Telephone_Call`=@phoneCall;", db.getConnection());
-            command.Parameters.Add("@phoneCall", MySqlDbType.VarChar).Value = phoneCall;
+            MySqlCommand command = new MySqlCommand("DELETE FROM `Call` WHERE `Telephone_Call`=@phoneCall;", db.getConnection());
+            command.Parameters.Add("@phoneCall", MySqlDbType.VarChar).Value = phoneUser;
             db.openConnection();
             command.ExecuteNonQuery();
             db.closeConnection();
@@ -48,76 +48,54 @@ namespace Taxopark
             Close();
         }
 
-        private void InfoYourCall_Load(object sender, EventArgs e)
+        private void update_Tick(object sender, EventArgs e)
         {
-            label1.Text = userName;
-            fillTable();
-            infoLabel4();
-            checkAccept();
-        }
-
-        private void fillTable()
-        {
-            string phoneCall = phoneUser;
-
             DB db = new DB();
+
             DataTable table = new DataTable();
             MySqlDataAdapter adapter = new MySqlDataAdapter();
 
-            MySqlCommand command = new MySqlCommand("SELECT * FROM `Call` WHERE `Telephone_Call`=@uL", db.getConnection());
-            command.Parameters.Add("@uL", MySqlDbType.VarChar).Value = phoneCall;
+            MySqlCommand command = new MySqlCommand("SELECT `FIO_Drivers`,`Marka_Car`,`Register_Number` FROM `Call`,`Drivers`,`Сar` " +
+                "WHERE(`Drivers_Id_Drivers`=`Id_Drivers`) AND(`Сar_Id_Сar`=`Id_Сar`) AND (`Accepted`= 1) AND(`Telephone_Call`=@phoneUser); ; ", db.getConnection());
+            command.Parameters.Add("@phoneUser", MySqlDbType.VarChar).Value = phoneUser;
 
             adapter.SelectCommand = command;
             adapter.Fill(table);
-            db.closeConnection();
-            alert = (table.Rows[0][7]).ToString();
-            accepted = (table.Rows[0][5]).ToString();
-            infoLabel5();
-        }
-        private void infoLabel5()
-        {
-            if (accepted == "1")
+            if (table.Rows.Count > 0)
             {
-                if (alert == "1")
-                {
-                    label5.Text = "Ваш водитель на месте";
-                }
-                else label5.Text = "Ваш водитель в пути";
+                label2.Text = "";
+                label2.Text += table.Rows[0][0].ToString();
+                label2.Text += table.Rows[0][1].ToString();
+                label2.Text += table.Rows[0][2].ToString();
+
+
             }
-            else label5.Text = "Ваш заказ еще никто не принял";
 
         }
-        private void infoLabel4()
+
+        private void InfoYourCall_Load(object sender, EventArgs e)
         {
+            label1.Text = userName;
             label4.Text = "";
-            label4.Text += driver + "\n";
-            label4.Text += avto + "\n";
+            label4.Text += "Отсутствует"+"\n";
+            label4.Text += "Отсутствует" + "\n";
+            label4.Text += "Отсутствует" + "\n";
             label4.Text += deliverFrom + "\n";
             label4.Text += deliverTo;
+
+            update.Enabled = true;
         }
 
-        private void checkAccept()//кто принял заказ
+        private void data()
         {
-            if (accepted == "1")
-            {
-                string phoneCall = phoneUser;
-
-                DB db = new DB();
-                DataTable table = new DataTable();
-                MySqlDataAdapter adapter = new MySqlDataAdapter();
-
-                MySqlCommand command = new MySqlCommand("SELECT `Accepted`,`FIO_Drivers`,`Marka_Car` FROM `call`,`drivers`,`сar` WHERE " +
-                    "(`Drivers_Id_Drivers`=`Id_Drivers`) and (`Сar_Id_Сar`=`Id_Сar`) and (`Telephone_Call` = @phoneCall) and (`Accepted` = 1);", db.getConnection());
-                command.Parameters.Add("@phoneCall", MySqlDbType.VarChar).Value = phoneCall;
-
-                adapter.SelectCommand = command;
-                adapter.Fill(table);
-
-                driver = (table.Rows[0][1]).ToString();
-                avto = (table.Rows[0][2]).ToString();
-                infoLabel4();
-            }
 
         }
+
+
+
+ 
+
+
+
     }
 }

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
@@ -50,6 +51,7 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.guna2ImageButton1 = new Guna.UI2.WinForms.Guna2ImageButton();
             this.button4 = new Guna.UI2.WinForms.Guna2Button();
+            this.update = new System.Windows.Forms.Timer(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -57,9 +59,10 @@
             // label1
             // 
             this.label1.Font = new System.Drawing.Font("Comic Sans MS", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label1.Location = new System.Drawing.Point(127, 9);
+            this.label1.Location = new System.Drawing.Point(95, 7);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(328, 38);
+            this.label1.Size = new System.Drawing.Size(246, 31);
             this.label1.TabIndex = 1;
             this.label1.Text = "Не принятые заказы";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -96,14 +99,14 @@
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle3;
             this.dataGridView1.GridColor = System.Drawing.Color.Gray;
-            this.dataGridView1.Location = new System.Drawing.Point(12, 62);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.dataGridView1.Location = new System.Drawing.Point(9, 50);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowHeadersVisible = false;
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(585, 197);
+            this.dataGridView1.Size = new System.Drawing.Size(439, 160);
             this.dataGridView1.TabIndex = 2;
             this.dataGridView1.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
             this.dataGridView1.ThemeStyle.AlternatingRowsStyle.Font = null;
@@ -199,10 +202,9 @@
             this.button1.FillColor = System.Drawing.Color.Yellow;
             this.button1.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.button1.ForeColor = System.Drawing.Color.Black;
-            this.button1.Location = new System.Drawing.Point(144, 274);
-            this.button1.Margin = new System.Windows.Forms.Padding(4);
+            this.button1.Location = new System.Drawing.Point(108, 223);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(303, 54);
+            this.button1.Size = new System.Drawing.Size(227, 44);
             this.button1.TabIndex = 10;
             this.button1.Text = "Принять вызов";
             this.button1.Click += new System.EventHandler(this.button1_Click);
@@ -211,9 +213,10 @@
             // 
             this.label2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label2.Font = new System.Drawing.Font("Comic Sans MS", 13.8F);
-            this.label2.Location = new System.Drawing.Point(297, 391);
+            this.label2.Location = new System.Drawing.Point(223, 318);
+            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(273, 135);
+            this.label2.Size = new System.Drawing.Size(205, 110);
             this.label2.TabIndex = 11;
             this.label2.Visible = false;
             // 
@@ -221,9 +224,10 @@
             // 
             this.label3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label3.Font = new System.Drawing.Font("Comic Sans MS", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label3.Location = new System.Drawing.Point(25, 391);
+            this.label3.Location = new System.Drawing.Point(19, 318);
+            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(250, 135);
+            this.label3.Size = new System.Drawing.Size(188, 110);
             this.label3.TabIndex = 12;
             this.label3.Text = "Время вызова:\r\nНомер клиента:\r\nОткуда забрать:\r\nКуда доставить:";
             this.label3.Visible = false;
@@ -231,9 +235,10 @@
             // label4
             // 
             this.label4.Font = new System.Drawing.Font("Comic Sans MS", 13.8F);
-            this.label4.Location = new System.Drawing.Point(144, 337);
+            this.label4.Location = new System.Drawing.Point(108, 274);
+            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(303, 39);
+            this.label4.Size = new System.Drawing.Size(227, 32);
             this.label4.TabIndex = 13;
             this.label4.Text = "Заказ выбранный вами";
             this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -242,9 +247,10 @@
             // 
             this.label5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label5.Font = new System.Drawing.Font("Comic Sans MS", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label5.Location = new System.Drawing.Point(25, 391);
+            this.label5.Location = new System.Drawing.Point(19, 318);
+            this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(545, 135);
+            this.label5.Size = new System.Drawing.Size(409, 110);
             this.label5.TabIndex = 14;
             this.label5.Text = "Вы еще не выбрали никакой заказ";
             this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -261,10 +267,9 @@
             this.button2.FillColor = System.Drawing.Color.Yellow;
             this.button2.Font = new System.Drawing.Font("Comic Sans MS", 12F);
             this.button2.ForeColor = System.Drawing.Color.Black;
-            this.button2.Location = new System.Drawing.Point(144, 546);
-            this.button2.Margin = new System.Windows.Forms.Padding(4);
+            this.button2.Location = new System.Drawing.Point(108, 444);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(303, 84);
+            this.button2.Size = new System.Drawing.Size(227, 68);
             this.button2.TabIndex = 15;
             this.button2.Text = "Сообщить клиенту о том что вы подьехали";
             this.button2.Click += new System.EventHandler(this.button2_Click);
@@ -281,10 +286,9 @@
             this.button3.FillColor = System.Drawing.Color.Red;
             this.button3.Font = new System.Drawing.Font("Comic Sans MS", 12F);
             this.button3.ForeColor = System.Drawing.Color.Black;
-            this.button3.Location = new System.Drawing.Point(144, 748);
-            this.button3.Margin = new System.Windows.Forms.Padding(4);
+            this.button3.Location = new System.Drawing.Point(108, 608);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(303, 53);
+            this.button3.Size = new System.Drawing.Size(227, 43);
             this.button3.TabIndex = 16;
             this.button3.Text = "Отказаться от заказа";
             this.button3.Click += new System.EventHandler(this.button3_Click);
@@ -293,10 +297,10 @@
             // 
             this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(549, 14);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.pictureBox1.Location = new System.Drawing.Point(412, 11);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(45, 34);
+            this.pictureBox1.Size = new System.Drawing.Size(34, 28);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 17;
             this.pictureBox1.TabStop = false;
@@ -310,11 +314,10 @@
             this.guna2ImageButton1.ImageOffset = new System.Drawing.Point(0, 0);
             this.guna2ImageButton1.ImageRotate = 0F;
             this.guna2ImageButton1.ImageSize = new System.Drawing.Size(45, 45);
-            this.guna2ImageButton1.Location = new System.Drawing.Point(12, 735);
-            this.guna2ImageButton1.Margin = new System.Windows.Forms.Padding(4);
+            this.guna2ImageButton1.Location = new System.Drawing.Point(9, 597);
             this.guna2ImageButton1.Name = "guna2ImageButton1";
             this.guna2ImageButton1.PressedState.ImageSize = new System.Drawing.Size(64, 64);
-            this.guna2ImageButton1.Size = new System.Drawing.Size(85, 66);
+            this.guna2ImageButton1.Size = new System.Drawing.Size(64, 54);
             this.guna2ImageButton1.TabIndex = 18;
             this.guna2ImageButton1.Click += new System.EventHandler(this.guna2ImageButton1_Click);
             // 
@@ -331,19 +334,23 @@
             this.button4.FillColor = System.Drawing.Color.Silver;
             this.button4.Font = new System.Drawing.Font("Comic Sans MS", 12F);
             this.button4.ForeColor = System.Drawing.Color.Black;
-            this.button4.Location = new System.Drawing.Point(144, 657);
-            this.button4.Margin = new System.Windows.Forms.Padding(4);
+            this.button4.Location = new System.Drawing.Point(108, 534);
             this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(303, 53);
+            this.button4.Size = new System.Drawing.Size(227, 43);
             this.button4.TabIndex = 20;
             this.button4.Text = "Завершить поездку";
             this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
+            // update
+            // 
+            this.update.Interval = 2000;
+            this.update.Tick += new System.EventHandler(this.update_Tick);
+            // 
             // MainVod
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(609, 814);
+            this.ClientSize = new System.Drawing.Size(457, 661);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.guna2ImageButton1);
             this.Controls.Add(this.pictureBox1);
@@ -356,7 +363,7 @@
             this.Controls.Add(this.button1);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.label1);
-            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "MainVod";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "MainVod";
@@ -386,5 +393,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
         private System.Windows.Forms.DataGridViewCheckBoxColumn Column6;
+        private System.Windows.Forms.Timer update;
     }
 }

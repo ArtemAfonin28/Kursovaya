@@ -48,10 +48,9 @@
             // label1
             // 
             this.label1.Font = new System.Drawing.Font("Comic Sans MS", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label1.Location = new System.Drawing.Point(99, 15);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Location = new System.Drawing.Point(74, 12);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(428, 76);
+            this.label1.Size = new System.Drawing.Size(321, 62);
             this.label1.TabIndex = 0;
             this.label1.Text = "Пользователь";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -59,10 +58,9 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(16, 15);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox1.Location = new System.Drawing.Point(12, 12);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(75, 76);
+            this.pictureBox1.Size = new System.Drawing.Size(56, 62);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 1;
             this.pictureBox1.TabStop = false;
@@ -70,10 +68,9 @@
             // label2
             // 
             this.label2.Font = new System.Drawing.Font("Comic Sans MS", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label2.Location = new System.Drawing.Point(5, 105);
-            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label2.Location = new System.Drawing.Point(4, 85);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(591, 92);
+            this.label2.Size = new System.Drawing.Size(443, 75);
             this.label2.TabIndex = 2;
             this.label2.Text = "Выберите место начала поездки\r\nи место ее окончания";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -93,14 +90,14 @@
             this.TextBox1.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.TextBox1.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.TextBox1.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.TextBox1.Location = new System.Drawing.Point(111, 293);
-            this.TextBox1.Margin = new System.Windows.Forms.Padding(7, 7, 7, 7);
+            this.TextBox1.Location = new System.Drawing.Point(83, 238);
+            this.TextBox1.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
             this.TextBox1.Name = "TextBox1";
             this.TextBox1.PasswordChar = '\0';
             this.TextBox1.PlaceholderForeColor = System.Drawing.Color.Gray;
             this.TextBox1.PlaceholderText = "Откуда";
             this.TextBox1.SelectedText = "";
-            this.TextBox1.Size = new System.Drawing.Size(376, 58);
+            this.TextBox1.Size = new System.Drawing.Size(282, 47);
             this.TextBox1.TabIndex = 3;
             // 
             // TextBox2
@@ -118,23 +115,22 @@
             this.TextBox2.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.TextBox2.Font = new System.Drawing.Font("Segoe UI", 10.2F);
             this.TextBox2.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.TextBox2.Location = new System.Drawing.Point(111, 213);
-            this.TextBox2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.TextBox2.Location = new System.Drawing.Point(83, 173);
+            this.TextBox2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.TextBox2.Name = "TextBox2";
             this.TextBox2.PasswordChar = '\0';
             this.TextBox2.PlaceholderForeColor = System.Drawing.Color.Gray;
             this.TextBox2.PlaceholderText = "Куда";
             this.TextBox2.SelectedText = "";
-            this.TextBox2.Size = new System.Drawing.Size(376, 58);
+            this.TextBox2.Size = new System.Drawing.Size(282, 47);
             this.TextBox2.TabIndex = 4;
             // 
             // label3
             // 
             this.label3.Font = new System.Drawing.Font("Comic Sans MS", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label3.Location = new System.Drawing.Point(104, 368);
-            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label3.Location = new System.Drawing.Point(78, 299);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(383, 41);
+            this.label3.Size = new System.Drawing.Size(287, 33);
             this.label3.TabIndex = 5;
             this.label3.Text = "Выберите тариф";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -151,10 +147,9 @@
             this.button1.FillColor = System.Drawing.Color.Silver;
             this.button1.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.button1.ForeColor = System.Drawing.Color.Black;
-            this.button1.Location = new System.Drawing.Point(99, 428);
-            this.button1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button1.Location = new System.Drawing.Point(74, 348);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(115, 98);
+            this.button1.Size = new System.Drawing.Size(86, 80);
             this.button1.TabIndex = 6;
             this.button1.Text = "Эконом";
             this.button1.Click += new System.EventHandler(this.Button1_Click);
@@ -171,10 +166,9 @@
             this.button2.FillColor = System.Drawing.Color.Silver;
             this.button2.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.button2.ForeColor = System.Drawing.Color.Black;
-            this.button2.Location = new System.Drawing.Point(237, 428);
-            this.button2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button2.Location = new System.Drawing.Point(178, 348);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(115, 98);
+            this.button2.Size = new System.Drawing.Size(86, 80);
             this.button2.TabIndex = 7;
             this.button2.Text = "Стандарт";
             this.button2.Click += new System.EventHandler(this.Button2_Click);
@@ -191,10 +185,9 @@
             this.button3.FillColor = System.Drawing.Color.Silver;
             this.button3.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.button3.ForeColor = System.Drawing.Color.Black;
-            this.button3.Location = new System.Drawing.Point(379, 428);
-            this.button3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button3.Location = new System.Drawing.Point(284, 348);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(115, 98);
+            this.button3.Size = new System.Drawing.Size(86, 80);
             this.button3.TabIndex = 8;
             this.button3.Text = "VIP";
             this.button3.Click += new System.EventHandler(this.Button3_Click);
@@ -211,10 +204,9 @@
             this.Button4.FillColor = System.Drawing.Color.Yellow;
             this.Button4.Font = new System.Drawing.Font("Comic Sans MS", 12F);
             this.Button4.ForeColor = System.Drawing.Color.Black;
-            this.Button4.Location = new System.Drawing.Point(139, 746);
-            this.Button4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Button4.Location = new System.Drawing.Point(104, 606);
             this.Button4.Name = "Button4";
-            this.Button4.Size = new System.Drawing.Size(303, 54);
+            this.Button4.Size = new System.Drawing.Size(227, 44);
             this.Button4.TabIndex = 9;
             this.Button4.Text = "Заказать такси";
             this.Button4.Click += new System.EventHandler(this.Button4_Click);
@@ -227,11 +219,10 @@
             this.guna2ImageButton1.ImageOffset = new System.Drawing.Point(0, 0);
             this.guna2ImageButton1.ImageRotate = 0F;
             this.guna2ImageButton1.ImageSize = new System.Drawing.Size(45, 45);
-            this.guna2ImageButton1.Location = new System.Drawing.Point(5, 746);
-            this.guna2ImageButton1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.guna2ImageButton1.Location = new System.Drawing.Point(4, 606);
             this.guna2ImageButton1.Name = "guna2ImageButton1";
             this.guna2ImageButton1.PressedState.ImageSize = new System.Drawing.Size(64, 64);
-            this.guna2ImageButton1.Size = new System.Drawing.Size(85, 66);
+            this.guna2ImageButton1.Size = new System.Drawing.Size(64, 54);
             this.guna2ImageButton1.TabIndex = 10;
             this.guna2ImageButton1.Click += new System.EventHandler(this.guna2ImageButton1_Click);
             // 
@@ -248,29 +239,28 @@
             this.comboBox1.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.comboBox1.ForeColor = System.Drawing.Color.Black;
             this.comboBox1.ItemHeight = 30;
-            this.comboBox1.Location = new System.Drawing.Point(104, 622);
-            this.comboBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.comboBox1.Location = new System.Drawing.Point(78, 505);
+            this.comboBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(383, 36);
+            this.comboBox1.Size = new System.Drawing.Size(288, 36);
             this.comboBox1.TabIndex = 11;
             this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
             // label4
             // 
             this.label4.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label4.Location = new System.Drawing.Point(107, 530);
-            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label4.Location = new System.Drawing.Point(80, 431);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(381, 89);
+            this.label4.Size = new System.Drawing.Size(286, 72);
             this.label4.TabIndex = 12;
-            this.label4.Text = "Выберите дополнительные услуги, если они вам нужны";
+            this.label4.Text = "Выберите дополнительную услугу, если она вам нужна";
             this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // Main
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(609, 814);
+            this.ClientSize = new System.Drawing.Size(457, 661);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.guna2ImageButton1);
@@ -285,7 +275,6 @@
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "Main";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Main";
