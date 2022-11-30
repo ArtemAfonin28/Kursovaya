@@ -6,6 +6,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -32,7 +33,7 @@ namespace Taxopark
             MySqlDataAdapter adapter = new MySqlDataAdapter();
             MySqlCommand command = new MySqlCommand("SELECT * FROM `Сlient` WHERE `Telephone_Сlient`=@uL AND `Password_Сlient`=@uP", db.getConnection());
             command.Parameters.Add("@uL", MySqlDbType.VarChar).Value = phoneUser;
-            command.Parameters.Add("@uP", MySqlDbType.VarChar).Value = passwordUser;
+            command.Parameters.Add("@uP", MySqlDbType.VarChar).Value = GetHashMD5(passwordUser);
             adapter.SelectCommand = command;
             adapter.Fill(table);
 
@@ -71,6 +72,14 @@ namespace Taxopark
             AvtorizVod avtVod = new AvtorizVod();
             avtVod.Show();
             Hide();
+        }
+
+        public string GetHashMD5(string input)
+        {
+            var md5 = MD5.Create();
+            var hash = md5.ComputeHash(Encoding.UTF8.GetBytes(input));
+
+            return Convert.ToBase64String(hash);
         }
 
     }

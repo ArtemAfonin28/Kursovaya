@@ -10,7 +10,7 @@ namespace Taxopark
 
     internal class DB
     {
-        MySqlConnection connection = new MySqlConnection("server=pma.web.edu;username=19055;port=3306;password=nfabwf;database=19055_Taxopark");
+        MySqlConnection connection = new MySqlConnection("server=localhost;username=root;port=3306;password=;database=19055_Taxopark");
 
         public void openConnection()
         {

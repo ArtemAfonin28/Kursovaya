@@ -5,6 +5,8 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Security.Cryptography;
+using System.Security.Policy;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -39,6 +41,7 @@ namespace Taxopark
                 string passwordUser = textBox3.Text;
                 string passwordUser2 = textBox4.Text;
 
+
                 if (passwordUser == passwordUser2)
                 {
                     if (isUserExist())
@@ -48,7 +51,7 @@ namespace Taxopark
                     MySqlCommand command = new MySqlCommand("insert into `Сlient` (`FIO_Сlient`,`Telephone_Сlient`,`Password_Сlient`) values (@fio,@phone,@password)", db.getConnection());
                     command.Parameters.Add("@fio", MySqlDbType.VarChar).Value = fioUser;
                     command.Parameters.Add("@phone", MySqlDbType.VarChar).Value = phoneUser;
-                    command.Parameters.Add("@password", MySqlDbType.VarChar).Value = passwordUser;
+                    command.Parameters.Add("@password", MySqlDbType.VarChar).Value = GetHashMD5(passwordUser);
 
                     db.openConnection();
                     if (command.ExecuteNonQuery() == 1)
@@ -87,6 +90,15 @@ namespace Taxopark
             else
                 return false;
         }
+
+        public string GetHashMD5(string input)
+        {
+            var md5 = MD5.Create();
+            var hash = md5.ComputeHash(Encoding.UTF8.GetBytes(input));
+
+            return Convert.ToBase64String(hash);
+        }
+
 
     }
 }
