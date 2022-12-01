@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
+using System.Security.Cryptography;
 
 namespace Taxopark
 {
@@ -33,7 +34,7 @@ namespace Taxopark
             DB db = new DB();
             DataTable table = new DataTable();
             MySqlDataAdapter adapter = new MySqlDataAdapter();
-            MySqlCommand command = new MySqlCommand("SELECT * FROM `Drivers` WHERE `Telephone_Drivers`=@uL AND `Password_Drivers`=@uP", db.getConnection());
+            MySqlCommand command = new MySqlCommand("SELECT * FROM `Drivers` WHERE `Telephone_Drivers`=@uL AND `Password_Drivers`=md5(@uP)", db.getConnection());
             command.Parameters.Add("@uL", MySqlDbType.VarChar).Value = phoneDriver;
             command.Parameters.Add("@uP", MySqlDbType.VarChar).Value = passwordDriver;
 
@@ -47,8 +48,8 @@ namespace Taxopark
                 mainVod.Show();
                 Close();
             }
-            else
-                MessageBox.Show("Такого пользователя не существует");
+            else 
+            MessageBox.Show("Такого пользователя не существует");
 
         }
 
@@ -64,6 +65,14 @@ namespace Taxopark
             Avtoriz avt = new Avtoriz();
             avt.Show();
             Close();
+        }
+
+        public string GetHashMD5(string input)
+        {
+            var md5 = MD5.Create();
+            var hash = md5.ComputeHash(Encoding.UTF8.GetBytes(input));
+
+            return Convert.ToBase64String(hash);
         }
     }
 }
