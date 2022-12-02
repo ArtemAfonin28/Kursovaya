@@ -9,6 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Microsoft.Office.Interop.Excel;
 using static Guna.UI2.Native.WinApi;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.ProgressBar;
 
@@ -232,25 +233,27 @@ namespace Taxopark
                 label3.Visible = false;
 
                 button4.Enabled = false;
+                OutputToExcel();
 
-                //deleteFinishedCall();
+                deleteFinishedCall();
             }
         }
+
         private void deleteFinishedCall()//удаление завершенного заказа
         {
             DB db = new DB();
-            MySqlCommand command = new MySqlCommand("DELETE FROM `Call` WHERE `Drivers_Id_Drivers`=@idDriver;", db.getConnection());
-            command.Parameters.Add("@idDriver", MySqlDbType.Int32).Value = idDriver;
+            MySqlCommand command = new MySqlCommand("DELETE FROM `Call` WHERE `Finished`=1;", db.getConnection());
             db.openConnection();
             command.ExecuteNonQuery();
             db.closeConnection();
         }
+
         private void fillLabel4()//заполнение поля с информацие о текущем заказе
         {
             if (driverNoCalls == false)
             {
                 DB db = new DB();
-                DataTable table = new DataTable();
+                System.Data.DataTable table = new System.Data.DataTable();
                 MySqlDataAdapter adapter = new MySqlDataAdapter();
                 MySqlCommand command = new MySqlCommand("SELECT DataTime_Call,Telephone_Call,Otkuda,Kuda FROM 19055_Taxopark.Call where Drivers_Id_Drivers=@idDriver;", db.getConnection());
                 command.Parameters.Add("@idDriver", MySqlDbType.Int32).Value = idDriver;
@@ -269,7 +272,7 @@ namespace Taxopark
         private void checkDriverNoCalls()//проверка есть ли у водителя заказ
         {
             DB db = new DB();
-            DataTable table = new DataTable();
+            System.Data.DataTable table = new System.Data.DataTable();
             MySqlDataAdapter adapter = new MySqlDataAdapter();
             MySqlCommand command = new MySqlCommand("SELECT DataTime_Call,Telephone_Call,Otkuda,Kuda FROM 19055_Taxopark.Call where Drivers_Id_Drivers=@idDriver;", db.getConnection());
             command.Parameters.Add("@idDriver", MySqlDbType.Int32).Value = idDriver;
@@ -290,5 +293,40 @@ namespace Taxopark
         {
             updateDataInDataGrid();
         }
+
+        private void OutputToExcel()
+        {
+            String FileName = "C:\\Users\\Savan\\Desktop\\git\\Kursovaya\\Taxopark\\Excel1.xlsx";
+
+
+            DB db = new DB();
+            System.Data.DataTable table = new System.Data.DataTable();
+            MySqlDataAdapter adapter = new MySqlDataAdapter();
+            MySqlCommand command = new MySqlCommand("SELECT DataTime_Call,Telephone_Call,Otkuda,Kuda,Add_Services_Id_Services FROM 19055_Taxopark.Call where Drivers_Id_Drivers=@idDriver;", db.getConnection());
+            command.Parameters.Add("@idDriver", MySqlDbType.Int32).Value = idDriver;
+            adapter.SelectCommand = command;
+            adapter.Fill(table);
+
+
+            Microsoft.Office.Interop.Excel.Application xlApp = new Microsoft.Office.Interop.Excel.Application();
+            Microsoft.Office.Interop.Excel.Workbook xlWb = xlApp.Workbooks.Open(FileName); //открываем Excel файл
+            Microsoft.Office.Interop.Excel.Worksheet xlSht = xlWb.Sheets[1]; //первый лист в файле
+            int iLastRow = xlSht.Cells[xlSht.Rows.Count, "A"].End[Microsoft.Office.Interop.Excel.XlDirection.xlUp].Row + 1;  //последняя заполненная строка в столбце А
+
+
+            for (int j = 0; j < table.Columns.Count; j++)
+            {
+                xlApp.Cells[iLastRow, j + 1] = table.Rows[0][j];
+            }
+
+
+
+
+
+            xlWb.Close(true); //закрыть и сохранить книгу
+            xlApp.Quit();
+            MessageBox.Show("Файл успешно сохранён!");
+        }
+
     }
 }

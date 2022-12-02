@@ -52,9 +52,10 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(12, 12);
+            this.pictureBox1.Location = new System.Drawing.Point(16, 15);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(56, 62);
+            this.pictureBox1.Size = new System.Drawing.Size(75, 76);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 3;
             this.pictureBox1.TabStop = false;
@@ -62,9 +63,10 @@
             // label1
             // 
             this.label1.Font = new System.Drawing.Font("Comic Sans MS", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label1.Location = new System.Drawing.Point(74, 12);
+            this.label1.Location = new System.Drawing.Point(99, 15);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(321, 62);
+            this.label1.Size = new System.Drawing.Size(428, 76);
             this.label1.TabIndex = 2;
             this.label1.Text = "Пользователь";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -74,10 +76,9 @@
             this.label2.BackColor = System.Drawing.SystemColors.Control;
             this.label2.Font = new System.Drawing.Font("Comic Sans MS", 15.75F);
             this.label2.ForeColor = System.Drawing.Color.Black;
-            this.label2.Location = new System.Drawing.Point(8, 10);
-            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label2.Location = new System.Drawing.Point(11, 12);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(221, 69);
+            this.label2.Size = new System.Drawing.Size(295, 85);
             this.label2.TabIndex = 4;
             this.label2.Text = "Информация о вашем заказе такси:";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -94,9 +95,10 @@
             this.button3.FillColor = System.Drawing.Color.Red;
             this.button3.Font = new System.Drawing.Font("Comic Sans MS", 12F);
             this.button3.ForeColor = System.Drawing.Color.Black;
-            this.button3.Location = new System.Drawing.Point(114, 608);
+            this.button3.Location = new System.Drawing.Point(152, 748);
+            this.button3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(225, 43);
+            this.button3.Size = new System.Drawing.Size(300, 53);
             this.button3.TabIndex = 17;
             this.button3.Text = "Отказаться от заказа";
             this.button3.Click += new System.EventHandler(this.button3_Click);
@@ -104,10 +106,9 @@
             // label3
             // 
             this.label3.Font = new System.Drawing.Font("Comic Sans MS", 15.75F);
-            this.label3.Location = new System.Drawing.Point(12, 171);
-            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label3.Location = new System.Drawing.Point(16, 210);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(208, 157);
+            this.label3.Size = new System.Drawing.Size(277, 193);
             this.label3.TabIndex = 18;
             this.label3.Text = "Ваш водитель:\r\nЗа вами приедет:\r\nНомер авто:\r\nМесто отправки:\r\nК адресу:\r\n";
             // 
@@ -115,10 +116,9 @@
             // 
             this.label4.BackColor = System.Drawing.Color.Transparent;
             this.label4.Font = new System.Drawing.Font("Comic Sans MS", 15.75F);
-            this.label4.Location = new System.Drawing.Point(218, 171);
-            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label4.Location = new System.Drawing.Point(291, 210);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(221, 157);
+            this.label4.Size = new System.Drawing.Size(295, 193);
             this.label4.TabIndex = 19;
             this.label4.Text = "Ваш водитель:\r\nЗа вами приедет:\r\nНомер авто:\r\nМесто отправки:\r\nВас доставят:\r\n";
             // 
@@ -126,10 +126,9 @@
             // 
             this.label5.BackColor = System.Drawing.SystemColors.Control;
             this.label5.Font = new System.Drawing.Font("Comic Sans MS", 15.75F);
-            this.label5.Location = new System.Drawing.Point(8, 7);
-            this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label5.Location = new System.Drawing.Point(11, 9);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(222, 75);
+            this.label5.Size = new System.Drawing.Size(296, 92);
             this.label5.TabIndex = 20;
             this.label5.Text = "Вас заказ не был еще принят";
             this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -142,10 +141,11 @@
             this.guna2ImageButton1.ImageOffset = new System.Drawing.Point(0, 0);
             this.guna2ImageButton1.ImageRotate = 0F;
             this.guna2ImageButton1.ImageSize = new System.Drawing.Size(45, 45);
-            this.guna2ImageButton1.Location = new System.Drawing.Point(4, 597);
+            this.guna2ImageButton1.Location = new System.Drawing.Point(5, 735);
+            this.guna2ImageButton1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.guna2ImageButton1.Name = "guna2ImageButton1";
             this.guna2ImageButton1.PressedState.ImageSize = new System.Drawing.Size(64, 64);
-            this.guna2ImageButton1.Size = new System.Drawing.Size(64, 54);
+            this.guna2ImageButton1.Size = new System.Drawing.Size(85, 66);
             this.guna2ImageButton1.TabIndex = 22;
             this.guna2ImageButton1.Click += new System.EventHandler(this.guna2ImageButton1_Click);
             // 
@@ -157,9 +157,10 @@
             this.guna2PictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("guna2PictureBox1.Image")));
             this.guna2PictureBox1.ImageFlip = Guna.UI2.WinForms.Enums.FlipOrientation.Horizontal;
             this.guna2PictureBox1.ImageRotate = 0F;
-            this.guna2PictureBox1.Location = new System.Drawing.Point(119, 432);
+            this.guna2PictureBox1.Location = new System.Drawing.Point(159, 532);
+            this.guna2PictureBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.guna2PictureBox1.Name = "guna2PictureBox1";
-            this.guna2PictureBox1.Size = new System.Drawing.Size(220, 169);
+            this.guna2PictureBox1.Size = new System.Drawing.Size(293, 208);
             this.guna2PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.guna2PictureBox1.TabIndex = 23;
             this.guna2PictureBox1.TabStop = false;
@@ -174,10 +175,10 @@
             this.guna2Panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
             this.guna2Panel1.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.guna2Panel1.BorderThickness = 5;
-            this.guna2Panel1.Location = new System.Drawing.Point(4, 162);
-            this.guna2Panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.guna2Panel1.Location = new System.Drawing.Point(5, 199);
+            this.guna2Panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.guna2Panel1.Name = "guna2Panel1";
-            this.guna2Panel1.Size = new System.Drawing.Size(444, 175);
+            this.guna2Panel1.Size = new System.Drawing.Size(592, 215);
             this.guna2Panel1.TabIndex = 24;
             // 
             // guna2Panel2
@@ -186,10 +187,10 @@
             this.guna2Panel2.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.guna2Panel2.BorderThickness = 5;
             this.guna2Panel2.Controls.Add(this.label2);
-            this.guna2Panel2.Location = new System.Drawing.Point(107, 81);
-            this.guna2Panel2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.guna2Panel2.Location = new System.Drawing.Point(143, 100);
+            this.guna2Panel2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.guna2Panel2.Name = "guna2Panel2";
-            this.guna2Panel2.Size = new System.Drawing.Size(238, 89);
+            this.guna2Panel2.Size = new System.Drawing.Size(317, 110);
             this.guna2Panel2.TabIndex = 25;
             // 
             // guna2Panel3
@@ -198,17 +199,17 @@
             this.guna2Panel3.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.guna2Panel3.BorderThickness = 5;
             this.guna2Panel3.Controls.Add(this.label5);
-            this.guna2Panel3.Location = new System.Drawing.Point(107, 328);
-            this.guna2Panel3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.guna2Panel3.Location = new System.Drawing.Point(143, 404);
+            this.guna2Panel3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.guna2Panel3.Name = "guna2Panel3";
-            this.guna2Panel3.Size = new System.Drawing.Size(238, 91);
+            this.guna2Panel3.Size = new System.Drawing.Size(317, 112);
             this.guna2Panel3.TabIndex = 26;
             // 
             // InfoYourCall
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(457, 661);
+            this.ClientSize = new System.Drawing.Size(609, 814);
             this.Controls.Add(this.guna2PictureBox1);
             this.Controls.Add(this.guna2ImageButton1);
             this.Controls.Add(this.label4);
@@ -219,7 +220,7 @@
             this.Controls.Add(this.guna2Panel1);
             this.Controls.Add(this.guna2Panel2);
             this.Controls.Add(this.guna2Panel3);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "InfoYourCall";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "infoYourCall";

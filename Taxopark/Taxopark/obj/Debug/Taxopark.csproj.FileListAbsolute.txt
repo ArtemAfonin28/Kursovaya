@@ -1138,3 +1138,4 @@ C:\Users\Savan\Desktop\git\Kursovaya\Taxopark\Taxopark\obj\Debug\Taxopark.csproj
 C:\Users\Savan\Desktop\git\Kursovaya\Taxopark\Taxopark\obj\Debug\Taxopark.csproj.CopyComplete
 C:\Users\Savan\Desktop\git\Kursovaya\Taxopark\Taxopark\obj\Debug\Taxopark.exe
 C:\Users\Savan\Desktop\git\Kursovaya\Taxopark\Taxopark\obj\Debug\Taxopark.pdb
+C:\Users\Savan\Desktop\git\Kursovaya\Taxopark\Taxopark\obj\Debug\Taxopark.csproj.ResolveComReference.cache
