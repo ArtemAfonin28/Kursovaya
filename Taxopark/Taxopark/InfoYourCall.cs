@@ -57,6 +57,11 @@ namespace Taxopark
 
         }
 
+        private void guna2ImageButton2_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
         private void update_Tick(object sender, EventArgs e)
         {
 

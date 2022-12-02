@@ -74,6 +74,11 @@ namespace Taxopark
 
             return Convert.ToBase64String(hash);
         }
+
+        private void guna2ImageButton2_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }
 
