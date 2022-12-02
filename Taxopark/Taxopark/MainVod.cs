@@ -63,6 +63,7 @@ namespace Taxopark
                     driverNoCalls = false;
                     fillLabel4();
                     updateDataInDataGrid();
+                    OutputToExcel();
                 }
                 else
                 {
@@ -225,7 +226,7 @@ namespace Taxopark
                 db.openConnection();
                 command.ExecuteNonQuery();
                 MessageBox.Show("Вы завершили вызов");
-                db.openConnection();
+                db.closeConnection();
                 driverNoCalls = true;
                 label2.Text = "";
                 label5.Visible = true;
@@ -233,7 +234,6 @@ namespace Taxopark
                 label3.Visible = false;
 
                 button4.Enabled = false;
-                OutputToExcel();
 
                 deleteFinishedCall();
             }
@@ -289,10 +289,7 @@ namespace Taxopark
             else driverNoCalls = true;
         }
 
-        private void update_Tick(object sender, EventArgs e)
-        {
-            updateDataInDataGrid();
-        }
+
 
         private void OutputToExcel()
         {

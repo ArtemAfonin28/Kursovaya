@@ -134,7 +134,6 @@ namespace Taxopark
         {
             Finished = "0";
             update.Enabled = false;
-            Delete();
             MessageBox.Show("Вызов завершен");
             Avtoriz avt = new Avtoriz();
             avt.Show();
