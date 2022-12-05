@@ -819,7 +819,6 @@ C:\Users\19055\Desktop\Kursovaya\Kursovaya\Taxopark\Taxopark\obj\Debug\Taxopark.
 C:\Users\19055\Desktop\Kursovaya\Kursovaya\Taxopark\Taxopark\obj\Debug\Taxopark.MainVod.resources
 C:\Users\19055\Desktop\Kursovaya\Kursovaya\Taxopark\Taxopark\obj\Debug\Taxopark.Properties.Resources.resources
 C:\Users\19055\Desktop\Kursovaya\Kursovaya\Taxopark\Taxopark\obj\Debug\Taxopark.Regisr.resources
-C:\Users\19055\Desktop\Kursovaya\Kursovaya\Taxopark\Taxopark\obj\Debug\Taxopark.RegistrVod.resources
 C:\Users\19055\Desktop\Kursovaya\Kursovaya\Taxopark\Taxopark\obj\Debug\Taxopark.csproj.GenerateResource.cache
 C:\Users\19055\Desktop\Kursovaya\Kursovaya\Taxopark\Taxopark\obj\Debug\Taxopark.csproj.CoreCompileInputs.cache
 C:\Users\19055\Desktop\Kursovaya\Kursovaya\Taxopark\Taxopark\obj\Debug\Taxopark.csproj.CopyComplete
@@ -1139,3 +1138,4 @@ C:\Users\Savan\Desktop\git\Kursovaya\Taxopark\Taxopark\obj\Debug\Taxopark.csproj
 C:\Users\Savan\Desktop\git\Kursovaya\Taxopark\Taxopark\obj\Debug\Taxopark.exe
 C:\Users\Savan\Desktop\git\Kursovaya\Taxopark\Taxopark\obj\Debug\Taxopark.pdb
 C:\Users\Savan\Desktop\git\Kursovaya\Taxopark\Taxopark\obj\Debug\Taxopark.csproj.ResolveComReference.cache
+C:\Users\19055\Desktop\Kursovaya\Kursovaya\Taxopark\Taxopark\obj\Debug\Taxopark.csproj.ResolveComReference.cache

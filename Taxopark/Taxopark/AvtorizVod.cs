@@ -79,6 +79,11 @@ namespace Taxopark
         {
             Application.Exit();
         }
+
+        private void AvtorizVod_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
 

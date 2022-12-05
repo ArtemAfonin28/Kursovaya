@@ -103,5 +103,10 @@ namespace Taxopark
         {
             Application.Exit();
         }
+
+        private void Regisr_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

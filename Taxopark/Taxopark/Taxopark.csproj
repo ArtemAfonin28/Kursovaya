@@ -253,12 +253,6 @@
     <Compile Include="Regisr.Designer.cs">
       <DependentUpon>Regisr.cs</DependentUpon>
     </Compile>
-    <Compile Include="RegistrVod.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="RegistrVod.Designer.cs">
-      <DependentUpon>RegistrVod.cs</DependentUpon>
-    </Compile>
     <EmbeddedResource Include="Avtoriz.resx">
       <DependentUpon>Avtoriz.cs</DependentUpon>
     </EmbeddedResource>
@@ -285,9 +279,6 @@
     </Compile>
     <EmbeddedResource Include="Regisr.resx">
       <DependentUpon>Regisr.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="RegistrVod.resx">
-      <DependentUpon>RegistrVod.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
