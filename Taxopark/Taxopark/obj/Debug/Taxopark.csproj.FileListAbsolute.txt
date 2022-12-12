@@ -1131,7 +1131,6 @@ C:\Users\Savan\Desktop\git\Kursovaya\Taxopark\Taxopark\obj\Debug\Taxopark.Main.r
 C:\Users\Savan\Desktop\git\Kursovaya\Taxopark\Taxopark\obj\Debug\Taxopark.MainVod.resources
 C:\Users\Savan\Desktop\git\Kursovaya\Taxopark\Taxopark\obj\Debug\Taxopark.Properties.Resources.resources
 C:\Users\Savan\Desktop\git\Kursovaya\Taxopark\Taxopark\obj\Debug\Taxopark.Regisr.resources
-C:\Users\Savan\Desktop\git\Kursovaya\Taxopark\Taxopark\obj\Debug\Taxopark.RegistrVod.resources
 C:\Users\Savan\Desktop\git\Kursovaya\Taxopark\Taxopark\obj\Debug\Taxopark.csproj.GenerateResource.cache
 C:\Users\Savan\Desktop\git\Kursovaya\Taxopark\Taxopark\obj\Debug\Taxopark.csproj.CoreCompileInputs.cache
 C:\Users\Savan\Desktop\git\Kursovaya\Taxopark\Taxopark\obj\Debug\Taxopark.csproj.CopyComplete

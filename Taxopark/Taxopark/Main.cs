@@ -67,7 +67,7 @@ namespace Taxopark
                         haveCall();
                         openInfoYourCall();
                     }
-                    else MessageBox.Show("Уже есть");
+                    else MessageBox.Show("Такой заказ уже есть");
                     db.closeConnection();
                 }
             }

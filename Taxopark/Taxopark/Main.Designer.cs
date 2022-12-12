@@ -61,7 +61,7 @@
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
             this.pictureBox1.Location = new System.Drawing.Point(16, 15);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(75, 76);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -95,11 +95,11 @@
             this.TextBox1.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.TextBox1.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.TextBox1.Location = new System.Drawing.Point(111, 293);
-            this.TextBox1.Margin = new System.Windows.Forms.Padding(7, 7, 7, 7);
+            this.TextBox1.Margin = new System.Windows.Forms.Padding(7);
             this.TextBox1.Name = "TextBox1";
             this.TextBox1.PasswordChar = '\0';
             this.TextBox1.PlaceholderForeColor = System.Drawing.Color.Gray;
-            this.TextBox1.PlaceholderText = "Откуда";
+            this.TextBox1.PlaceholderText = "Куда";
             this.TextBox1.SelectedText = "";
             this.TextBox1.Size = new System.Drawing.Size(376, 58);
             this.TextBox1.TabIndex = 3;
@@ -124,7 +124,7 @@
             this.TextBox2.Name = "TextBox2";
             this.TextBox2.PasswordChar = '\0';
             this.TextBox2.PlaceholderForeColor = System.Drawing.Color.Gray;
-            this.TextBox2.PlaceholderText = "Куда";
+            this.TextBox2.PlaceholderText = "Откуда";
             this.TextBox2.SelectedText = "";
             this.TextBox2.Size = new System.Drawing.Size(376, 58);
             this.TextBox2.TabIndex = 4;
@@ -153,7 +153,7 @@
             this.button1.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.button1.ForeColor = System.Drawing.Color.Black;
             this.button1.Location = new System.Drawing.Point(99, 428);
-            this.button1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button1.Margin = new System.Windows.Forms.Padding(4);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(115, 98);
             this.button1.TabIndex = 6;
@@ -173,7 +173,7 @@
             this.button2.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.button2.ForeColor = System.Drawing.Color.Black;
             this.button2.Location = new System.Drawing.Point(237, 428);
-            this.button2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button2.Margin = new System.Windows.Forms.Padding(4);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(115, 98);
             this.button2.TabIndex = 7;
@@ -193,7 +193,7 @@
             this.button3.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.button3.ForeColor = System.Drawing.Color.Black;
             this.button3.Location = new System.Drawing.Point(379, 428);
-            this.button3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button3.Margin = new System.Windows.Forms.Padding(4);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(115, 98);
             this.button3.TabIndex = 8;
@@ -213,7 +213,7 @@
             this.Button4.Font = new System.Drawing.Font("Comic Sans MS", 12F);
             this.Button4.ForeColor = System.Drawing.Color.Black;
             this.Button4.Location = new System.Drawing.Point(139, 746);
-            this.Button4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Button4.Margin = new System.Windows.Forms.Padding(4);
             this.Button4.Name = "Button4";
             this.Button4.Size = new System.Drawing.Size(303, 54);
             this.Button4.TabIndex = 9;
@@ -229,7 +229,7 @@
             this.guna2ImageButton1.ImageRotate = 0F;
             this.guna2ImageButton1.ImageSize = new System.Drawing.Size(45, 45);
             this.guna2ImageButton1.Location = new System.Drawing.Point(5, 746);
-            this.guna2ImageButton1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.guna2ImageButton1.Margin = new System.Windows.Forms.Padding(4);
             this.guna2ImageButton1.Name = "guna2ImageButton1";
             this.guna2ImageButton1.PressedState.ImageSize = new System.Drawing.Size(64, 64);
             this.guna2ImageButton1.Size = new System.Drawing.Size(85, 66);
@@ -302,7 +302,7 @@
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Main";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Main";

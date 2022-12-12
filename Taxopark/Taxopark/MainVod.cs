@@ -47,7 +47,8 @@ namespace Taxopark
                     int idDriverCall = idDriver;
 
                     DB db = new DB();
-                    MySqlCommand command = new MySqlCommand("UPDATE `Call` SET `Accepted` = 1, `Accepted_DataTime`= @Accepted_DataTime,Drivers_Id_Drivers=@idDriverCall WHERE `Telephone_Call` = @Telephone_Call;", db.getConnection());
+                    MySqlCommand command = new MySqlCommand("UPDATE `Call` SET `Accepted` = 1, `Accepted_DataTime`= @Accepted_DataTime," +
+                        "Drivers_Id_Drivers=@idDriverCall WHERE `Telephone_Call` = @Telephone_Call;", db.getConnection());
                     command.Parameters.Add("@Accepted_DataTime", MySqlDbType.DateTime).Value = Accepted_DataTime;
                     command.Parameters.Add("@Telephone_Call", MySqlDbType.VarChar).Value = Telephone_Call;
                     command.Parameters.Add("@idDriverCall", MySqlDbType.Int32).Value = idDriverCall;
@@ -160,7 +161,8 @@ namespace Taxopark
 
             DB db = new DB();
             db.openConnection();
-            string query = "SELECT `DataTime_Call`,`Telephone_Call`,`Otkuda`,`Kuda`,`Name_Services` FROM `Call`,`Add_Services` WHERE (`Add_Services_Id_Services` = `Id_Services`) and (`Accepted` is null);";
+            string query = "SELECT `DataTime_Call`,`Telephone_Call`,`Otkuda`,`Kuda`,`Name_Services` FROM `Call`,`Add_Services` " +
+                "WHERE (`Add_Services_Id_Services` = `Id_Services`) and (`Accepted` is null);";
             MySqlCommand command = new MySqlCommand(query, db.getConnection());
             MySqlDataReader reader = command.ExecuteReader();
             List<string[]> data = new List<string[]>();
@@ -175,13 +177,8 @@ namespace Taxopark
                 data[data.Count - 1][3] = reader[3].ToString();
                 data[data.Count - 1][4] = reader[4].ToString();
             }
-
-
-
             reader.Close();
-
             db.closeConnection();
-
             foreach (string[] s in data)
                 dataGridView1.Rows.Add(s);
         }
@@ -293,7 +290,7 @@ namespace Taxopark
 
         private void OutputToExcel()
         {
-            String FileName = "C:\\Users\\19055\\Desktop\\Kursovaya\\Kursovaya\\Taxopark\\Excel1.xlsx";
+            String FileName = "C:\\Users\\Savan\\Desktop\\git\\Kursovaya\\Taxopark\\Excel1.xlsx";
 
 
             DB db = new DB();
@@ -322,7 +319,6 @@ namespace Taxopark
 
             xlWb.Close(true); //закрыть и сохранить книгу
             xlApp.Quit();
-            MessageBox.Show("Файл успешно сохранён!");
         }
 
         private void guna2ImageButton2_Click(object sender, EventArgs e)

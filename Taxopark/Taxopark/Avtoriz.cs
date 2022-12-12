@@ -26,31 +26,35 @@ namespace Taxopark
 
         private void button1_Click(object sender, EventArgs e)
         {
-            string phoneUser = textBox1.Text;
-            string passwordUser = textBox2.Text;
-            DB db = new DB();
-            DataTable table = new DataTable();
-            MySqlDataAdapter adapter = new MySqlDataAdapter();
-            MySqlCommand command = new MySqlCommand("SELECT * FROM `Сlient` WHERE `Telephone_Сlient`=@uL AND `Password_Сlient`=@uP", db.getConnection());
-            command.Parameters.Add("@uL", MySqlDbType.VarChar).Value = phoneUser;
-            command.Parameters.Add("@uP", MySqlDbType.VarChar).Value = GetHashMD5(passwordUser);
-            adapter.SelectCommand = command;
-            adapter.Fill(table);
-
-
-
-            if (table.Rows.Count > 0)
+            if (textBox1.Text == "" || textBox2.Text == "")
             {
-                Main main = new Main();
-                main.userName = table.Rows[0][1].ToString();
-                main.idUser = Convert.ToInt32(table.Rows[0][0]);
-                main.phoneUser = phoneUser;
-                main.Show();
-                Hide();
+                MessageBox.Show("Заполните все поля");
             }
             else
-                MessageBox.Show("Такого пользователя не существует");
-           
+            {
+                string phoneUser = textBox1.Text;
+                string passwordUser = textBox2.Text;
+                DB db = new DB();
+                DataTable table = new DataTable();
+                MySqlDataAdapter adapter = new MySqlDataAdapter();
+                MySqlCommand command = new MySqlCommand("SELECT * FROM `Сlient` WHERE `Telephone_Сlient`=@phoneUser AND `Password_Сlient`=@passwordUser", db.getConnection());
+                command.Parameters.Add("@phoneUser", MySqlDbType.VarChar).Value = phoneUser;
+                command.Parameters.Add("@passwordUser", MySqlDbType.VarChar).Value = GetHashMD5(passwordUser);
+                adapter.SelectCommand = command;
+                adapter.Fill(table);
+
+                if (table.Rows.Count > 0)
+                {
+                    Main main = new Main();
+                    main.userName = table.Rows[0][1].ToString();
+                    main.idUser = Convert.ToInt32(table.Rows[0][0]);
+                    main.phoneUser = phoneUser;
+                    main.Show();
+                    Hide();
+                }
+                else
+                    MessageBox.Show("Данные введены неверно или такого пользователя не существует");
+            }
         }
 
         private void label5_Click(object sender, EventArgs e)

@@ -131,7 +131,7 @@
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(296, 92);
             this.label5.TabIndex = 20;
-            this.label5.Text = "Вас заказ не был еще принят";
+            this.label5.Text = "Вас заказ еще не был принят";
             this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // guna2ImageButton1
@@ -173,8 +173,8 @@
             // 
             // guna2Panel1
             // 
-            this.guna2Panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
-            this.guna2Panel1.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.guna2Panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(175)))), ((int)(((byte)(232)))));
+            this.guna2Panel1.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(111)))), ((int)(((byte)(143)))));
             this.guna2Panel1.BorderThickness = 5;
             this.guna2Panel1.Location = new System.Drawing.Point(5, 199);
             this.guna2Panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -184,8 +184,8 @@
             // 
             // guna2Panel2
             // 
-            this.guna2Panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
-            this.guna2Panel2.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.guna2Panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(175)))), ((int)(((byte)(232)))));
+            this.guna2Panel2.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(111)))), ((int)(((byte)(143)))));
             this.guna2Panel2.BorderThickness = 5;
             this.guna2Panel2.Controls.Add(this.label2);
             this.guna2Panel2.Location = new System.Drawing.Point(143, 100);
@@ -196,8 +196,8 @@
             // 
             // guna2Panel3
             // 
-            this.guna2Panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
-            this.guna2Panel3.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.guna2Panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(175)))), ((int)(((byte)(232)))));
+            this.guna2Panel3.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(111)))), ((int)(((byte)(143)))));
             this.guna2Panel3.BorderThickness = 5;
             this.guna2Panel3.Controls.Add(this.label5);
             this.guna2Panel3.Location = new System.Drawing.Point(143, 404);
