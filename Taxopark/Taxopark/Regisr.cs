@@ -45,7 +45,8 @@ namespace Taxopark
                     if (isUserExist())
                         return;
                     DB db = new DB();
-                    MySqlCommand command = new MySqlCommand("insert into `Сlient` (`FIO_Сlient`,`Telephone_Сlient`,`Password_Сlient`) values (@fio,@phone,@password)", db.getConnection());
+                    MySqlCommand command = new MySqlCommand("insert into `Сlient` (`FIO_Сlient`,`Telephone_Сlient`,`Password_Сlient`) " +
+                        "values (@fio,@phone,@password)", db.getConnection());
                     command.Parameters.Add("@fio", MySqlDbType.VarChar).Value = fioUser;
                     command.Parameters.Add("@phone", MySqlDbType.VarChar).Value = phoneUser;
                     command.Parameters.Add("@password", MySqlDbType.VarChar).Value = GetHashMD5(passwordUser);

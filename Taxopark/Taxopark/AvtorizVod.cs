@@ -34,7 +34,8 @@ namespace Taxopark
             DB db = new DB();
             DataTable table = new DataTable();
             MySqlDataAdapter adapter = new MySqlDataAdapter();
-            MySqlCommand command = new MySqlCommand("SELECT * FROM `Drivers` WHERE `Telephone_Drivers`=@uL AND `Password_Drivers`=md5(@uP)", db.getConnection());
+            MySqlCommand command = new MySqlCommand("SELECT * FROM `Drivers` WHERE " +
+                "`Telephone_Drivers`=@uL AND `Password_Drivers`=md5(@uP)", db.getConnection());
             command.Parameters.Add("@uL", MySqlDbType.VarChar).Value = phoneDriver;
             command.Parameters.Add("@uP", MySqlDbType.VarChar).Value = passwordDriver;
 
